@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Appskuy — Project Digital untuk UMKM & Developer</title>
-<meta name="description" content="Appskuy — Kumpulan project digital untuk UMKM & developer. Download gratis dengan fitur dasar, upgrade ke premium untuk fitur penuh. Preview langsung, arsip rapi.">
+<title>Appskuy — Project Digital untuk Pemilik Usaha & Developer</title>
+<meta name="description" content="Appskuy — Kumpulan project digital untuk pemilik usaha & developer. Download gratis dengan fitur dasar, upgrade premium untuk fitur penuh. Preview langsung, arsip per kategori.">
 
 <!-- Favicon inline SVG -->
 <link rel="icon" type="image/svg+xml"
@@ -39,8 +39,8 @@
     </a>
     <nav class="nav-links">
       <a href="#projects" class="active">Projects</a>
-      <a href="#pricing">Paket</a>
       <a href="#archive">Arsip</a>
+      <a href="#pricing">Paket</a>
       <a href="#about">Tentang</a>
     </nav>
     <div class="nav-actions">
@@ -52,9 +52,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">🏪 Untuk UMKM & 👨‍💻 Developer</div>
+    <div class="hero-badge">🏪 Untuk Pemilik Usaha & 👨‍💻 Developer</div>
     <h1>Selamat datang di <span class="gradient">Appskuy</span></h1>
-    <p>Platform kumpulan project digital untuk <strong>UMKM maupun developer</strong>.
+    <p>Platform kumpulan project digital untuk <strong>pemilik usaha maupun developer</strong>.
        <strong>Download gratis dengan fitur dasar</strong>, atau upgrade ke versi premium
        untuk membuka semua fitur. Preview dulu, baru putuskan.</p>
     <div class="hero-stats">
@@ -64,7 +64,7 @@
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">Jelajahi Project</a>
-      <a href="#pricing" class="btn">Lihat Paket</a>
+      <a href="#archive" class="btn">Lihat Arsip</a>
     </div>
   </div>
 </section>
@@ -80,14 +80,25 @@
       <button class="chip active" data-filter="all">Semua</button>
       <button class="chip" data-filter="free">Bisa Gratis</button>
       <button class="chip" data-filter="premium">Ada Premium</button>
-      <button class="chip" data-filter="archived">Arsip</button>
     </div>
+  </div>
+
+  <div class="filter-info" id="filterInfo" style="display:none">
+    <span id="filterInfoText"></span>
+    <button id="clearFilter">✕ Reset</button>
   </div>
 
   <div class="grid" id="projectGrid"></div>
   <div class="empty" id="emptyState" style="display:none">
     <p>😕 Tidak ada project yang cocok.</p>
   </div>
+</section>
+
+<!-- ARSIP DOKUMEN PER KATEGORI -->
+<section class="container" id="archive" style="padding:40px 0">
+  <h2 class="section-title">📚 Arsip Project</h2>
+  <p class="section-sub">Kumpulan dokumen project berdasarkan kategori</p>
+  <div id="archiveContainer"></div>
 </section>
 
 <!-- PRICING -->
@@ -102,7 +113,7 @@
         <li>✅ Semua project versi dasar</li>
         <li>✅ Fitur terbatas</li>
         <li>✅ Preview aplikasi</li>
-        <li>✅ Arsip pribadi</li>
+        <li>✅ Arsip per kategori</li>
         <li>❌ Support prioritas</li>
       </ul>
       <a href="#projects" class="btn btn-primary full">Mulai Gratis</a>
@@ -169,7 +180,7 @@
       </svg>
       <strong>Appskuy</strong>
     </div>
-    <p class="footer-desc">Platform kumpulan project digital untuk UMKM & developer.<br>
+    <p class="footer-desc">Platform kumpulan project digital untuk pemilik usaha & developer.<br>
        Mulai gratis, upgrade kapan saja.</p>
     <p>© 2025 Appskuy. Dibuat dengan ❤️ untuk developer Indonesia.</p>
   </div>
