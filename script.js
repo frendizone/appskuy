@@ -2,210 +2,161 @@
 const PROJECTS = [
   {
     id: 1,
-    title: "E-Commerce Dashboard",
-    desc: "Dashboard admin toko online dengan chart penjualan, manajemen produk, dan laporan real-time.",
-    category: "Web App",
-    emoji: "🛒",
+    title: "Landing Page UMKM Kopi",
+    desc: "Template landing page modern untuk kedai kopi, responsive, dengan animasi scroll.",
+    category: "Web",
+    subcategory: "Landing Page",
+    emoji: "☕",
     demoUrl: "https://example.com",
-    archived: false,
     plans: {
       free: {
         price: 0,
-        features: [
-          "✅ 1 toko / 1 user",
-          "✅ Manajemen produk dasar",
-          "✅ Laporan penjualan harian",
-          "❌ Multi-outlet",
-          "❌ Export Excel/PDF",
-          "❌ Support prioritas"
-        ],
+        features: ["✅ 1 halaman", "✅ Responsive", "✅ Dark mode",
+                   "❌ Multi-halaman", "❌ Form kontak", "❌ SEO optimization"],
         downloadUrl: "https://example.com/demo.zip"
       },
       premium: {
-        price: 150000,
-        features: [
-          "✅ Unlimited toko & user",
-          "✅ Semua fitur gratis",
-          "✅ Multi-outlet",
-          "✅ Export Excel/PDF",
-          "✅ Support prioritas 24/7",
-          "✅ Update gratis selamanya"
-        ],
+        price: 100000,
+        features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Form kontak",
+                   "✅ SEO optimization", "✅ Integrasi WhatsApp", "✅ Support prioritas"],
         downloadUrl: "https://example.com/full.zip"
       }
     }
   },
   {
     id: 2,
-    title: "Aplikasi Kasir (POS)",
-    desc: "Point of Sale lengkap: scan barcode, struk digital, multi-outlet, dan laporan harian.",
-    category: "Desktop",
-    emoji: "💳",
+    title: "Company Profile Agency",
+    desc: "Website company profile profesional untuk agency/konsultan, dengan halaman tim & portfolio.",
+    category: "Web",
+    subcategory: "Company Profile",
+    emoji: "🏢",
     demoUrl: "https://example.com",
-    archived: false,
     plans: {
       free: {
         price: 0,
-        features: [
-          "✅ 1 kasir / 1 device",
-          "✅ Transaksi dasar",
-          "✅ Struk digital",
-          "❌ Multi-outlet",
-          "❌ Barcode scanner",
-          "❌ Laporan lanjutan"
-        ],
+        features: ["✅ 3 halaman", "✅ Responsive", "✅ Halaman tim",
+                   "❌ Blog", "❌ Multi-bahasa", "❌ SEO optimization"],
         downloadUrl: "https://example.com/demo.zip"
       },
       premium: {
-        price: 250000,
-        features: [
-          "✅ Unlimited kasir & device",
-          "✅ Semua fitur gratis",
-          "✅ Multi-outlet",
-          "✅ Barcode scanner",
-          "✅ Laporan lanjutan + export",
-          "✅ Support prioritas"
-        ],
+        price: 200000,
+        features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Blog",
+                   "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"],
         downloadUrl: "https://example.com/full.zip"
       }
     }
   },
   {
     id: 3,
-    title: "Landing Page UMKM",
-    desc: "Template landing page modern untuk UMKM, responsive, dengan animasi scroll dan dark mode.",
-    category: "Website",
-    emoji: "🚀",
+    title: "E-Commerce Dashboard",
+    desc: "Dashboard admin toko online dengan chart penjualan, manajemen produk, dan laporan real-time.",
+    category: "Web",
+    subcategory: "Dashboard",
+    emoji: "🛒",
     demoUrl: "https://example.com",
-    archived: true,
     plans: {
       free: {
         price: 0,
-        features: [
-          "✅ 1 halaman",
-          "✅ Responsive",
-          "✅ Dark mode",
-          "❌ Multi-halaman",
-          "❌ Form kontak",
-          "❌ SEO optimization"
-        ],
+        features: ["✅ 1 toko / 1 user", "✅ Manajemen produk dasar", "✅ Laporan harian",
+                   "❌ Multi-outlet", "❌ Export Excel/PDF", "❌ Support prioritas"],
         downloadUrl: "https://example.com/demo.zip"
       },
       premium: {
-        price: 100000,
-        features: [
-          "✅ Unlimited halaman",
-          "✅ Semua fitur gratis",
-          "✅ Form kontak",
-          "✅ SEO optimization",
-          "✅ Integrasi WhatsApp",
-          "✅ Support prioritas"
-        ],
+        price: 150000,
+        features: ["✅ Unlimited toko & user", "✅ Semua fitur gratis", "✅ Multi-outlet",
+                   "✅ Export Excel/PDF", "✅ Support prioritas 24/7", "✅ Update gratis"],
         downloadUrl: "https://example.com/full.zip"
       }
     }
   },
   {
     id: 4,
-    title: "Aplikasi Absensi QR",
-    desc: "Absensi karyawan via QR code, rekap otomatis, export Excel, dan geofencing.",
-    category: "Mobile",
-    emoji: "📱",
+    title: "Toko Online Sederhana",
+    desc: "Website e-commerce siap pakai untuk UMKM: katalog produk, keranjang, checkout WhatsApp.",
+    category: "Web",
+    subcategory: "E-Commerce",
+    emoji: "🛍️",
     demoUrl: "https://example.com",
-    archived: false,
     plans: {
       free: {
         price: 0,
-        features: [
-          "✅ Maks 10 karyawan",
-          "✅ Absensi QR dasar",
-          "✅ Rekap harian",
-          "❌ Geofencing",
-          "❌ Export Excel",
-          "❌ Multi-cabang"
-        ],
+        features: ["✅ Maks 20 produk", "✅ Katalog produk", "✅ Checkout WhatsApp",
+                   "❌ Payment gateway", "❌ Multi-vendor", "❌ Laporan penjualan"],
         downloadUrl: "https://example.com/demo.zip"
       },
       premium: {
-        price: 300000,
-        features: [
-          "✅ Unlimited karyawan",
-          "✅ Semua fitur gratis",
-          "✅ Geofencing",
-          "✅ Export Excel & PDF",
-          "✅ Multi-cabang",
-          "✅ Support prioritas"
-        ],
+        price: 250000,
+        features: ["✅ Unlimited produk", "✅ Semua fitur gratis", "✅ Payment gateway",
+                   "✅ Multi-vendor", "✅ Laporan penjualan", "✅ Support prioritas"],
         downloadUrl: "https://example.com/full.zip"
       }
     }
   },
   {
     id: 5,
-    title: "Portfolio Generator",
-    desc: "Buat website portofolio otomatis dari input JSON. Support custom domain dan tema.",
-    category: "Web App",
-    emoji: "🎨",
+    title: "Aplikasi Kasir (POS)",
+    desc: "Point of Sale lengkap: scan barcode, struk digital, multi-outlet, dan laporan harian.",
+    category: "Desktop",
+    subcategory: "POS",
+    emoji: "💳",
     demoUrl: "https://example.com",
-    archived: true,
     plans: {
       free: {
         price: 0,
-        features: [
-          "✅ 1 template",
-          "✅ Subdomain appskuy",
-          "✅ Auto-generate dari JSON",
-          "❌ Custom domain",
-          "❌ Semua template",
-          "❌ Analytics"
-        ],
+        features: ["✅ 1 kasir / 1 device", "✅ Transaksi dasar", "✅ Struk digital",
+                   "❌ Multi-outlet", "❌ Barcode scanner", "❌ Laporan lanjutan"],
         downloadUrl: "https://example.com/demo.zip"
       },
       premium: {
-        price: 75000,
-        features: [
-          "✅ Semua template",
-          "✅ Custom domain",
-          "✅ Analytics",
-          "✅ Tanpa watermark",
-          "✅ Update gratis",
-          "✅ Support prioritas"
-        ],
+        price: 250000,
+        features: ["✅ Unlimited kasir & device", "✅ Semua fitur gratis", "✅ Multi-outlet",
+                   "✅ Barcode scanner", "✅ Laporan lanjutan + export", "✅ Support prioritas"],
         downloadUrl: "https://example.com/full.zip"
       }
     }
   },
   {
     id: 6,
-    title: "Sistem Manajemen Sekolah",
-    desc: "SIAKAD lengkap: siswa, guru, jadwal, nilai, pembayaran SPP, dan portal orang tua.",
-    category: "Web App",
-    emoji: "🏫",
+    title: "Aplikasi Absensi QR",
+    desc: "Absensi karyawan via QR code, rekap otomatis, export Excel, dan geofencing.",
+    category: "Mobile",
+    subcategory: "Absensi",
+    emoji: "📱",
     demoUrl: "https://example.com",
-    archived: false,
     plans: {
       free: {
         price: 0,
-        features: [
-          "✅ Maks 50 siswa",
-          "✅ Data siswa & guru",
-          "✅ Jadwal dasar",
-          "❌ Modul SPP",
-          "❌ Portal orang tua",
-          "❌ Multi-tahun ajaran"
-        ],
+        features: ["✅ Maks 10 karyawan", "✅ Absensi QR dasar", "✅ Rekap harian",
+                   "❌ Geofencing", "❌ Export Excel", "❌ Multi-cabang"],
         downloadUrl: "https://example.com/demo.zip"
       },
       premium: {
-        price: 450000,
-        features: [
-          "✅ Unlimited siswa",
-          "✅ Semua fitur gratis",
-          "✅ Modul SPP lengkap",
-          "✅ Portal orang tua",
-          "✅ Multi-tahun ajaran",
-          "✅ Support prioritas"
-        ],
+        price: 300000,
+        features: ["✅ Unlimited karyawan", "✅ Semua fitur gratis", "✅ Geofencing",
+                   "✅ Export Excel & PDF", "✅ Multi-cabang", "✅ Support prioritas"],
+        downloadUrl: "https://example.com/full.zip"
+      }
+    }
+  },
+  {
+    id: 7,
+    title: "Portfolio Generator",
+    desc: "Buat website portofolio otomatis dari input JSON. Support custom domain dan tema.",
+    category: "Website",
+    subcategory: "Portfolio",
+    emoji: "🎨",
+    demoUrl: "https://example.com",
+    plans: {
+      free: {
+        price: 0,
+        features: ["✅ 1 template", "✅ Subdomain appskuy", "✅ Auto-generate dari JSON",
+                   "❌ Custom domain", "❌ Semua template", "❌ Analytics"],
+        downloadUrl: "https://example.com/demo.zip"
+      },
+      premium: {
+        price: 75000,
+        features: ["✅ Semua template", "✅ Custom domain", "✅ Analytics",
+                   "✅ Tanpa watermark", "✅ Update gratis", "✅ Support prioritas"],
         downloadUrl: "https://example.com/full.zip"
       }
     }
@@ -216,6 +167,8 @@ const PROJECTS = [
 let state = {
   filter: "all",
   search: "",
+  filterCat: null,
+  filterSub: null,
   projects: [...PROJECTS]
 };
 
@@ -225,17 +178,24 @@ const emptyState = document.getElementById("emptyState");
 const searchInput = document.getElementById("searchInput");
 const filters = document.getElementById("filters");
 const toast = document.getElementById("toast");
+const filterInfo = document.getElementById("filterInfo");
+const filterInfoText = document.getElementById("filterInfoText");
+const clearFilterBtn = document.getElementById("clearFilter");
+const archiveContainer = document.getElementById("archiveContainer");
 
-/* ============ RENDER ============ */
+/* ============ RENDER PROJECT GRID ============ */
 function render() {
   const filtered = state.projects.filter(p => {
-    const matchSearch = p.title.toLowerCase().includes(state.search) ||
-                        p.desc.toLowerCase().includes(state.search) ||
-                        p.category.toLowerCase().includes(state.search);
+    const q = state.search;
+    const matchSearch = p.title.toLowerCase().includes(q) ||
+                        p.desc.toLowerCase().includes(q) ||
+                        p.category.toLowerCase().includes(q) ||
+                        p.subcategory.toLowerCase().includes(q);
     let matchFilter = true;
-    if (state.filter === "free")    matchFilter = !p.archived;
-    if (state.filter === "premium") matchFilter = !p.archived && p.plans.premium.price > 0;
-    if (state.filter === "archived")matchFilter = p.archived;
+    if (state.filter === "free")    matchFilter = p.plans.free.price === 0;
+    if (state.filter === "premium") matchFilter = p.plans.premium.price > 0;
+    if (state.filter === "sub")     matchFilter = p.category === state.filterCat &&
+                                                 p.subcategory === state.filterSub;
     return matchSearch && matchFilter;
   });
 
@@ -248,13 +208,12 @@ function render() {
     const premiumPrice = p.plans.premium.price;
     card.innerHTML = `
       <div class="card-img">
-        ${p.archived ? '<span class="badge-archived">📦 ARSIP</span>' : ''}
         <span class="card-badge badge-free">GRATIS</span>
         ${premiumPrice > 0 ? `<span class="card-badge badge-paid badge-second">PREMIUM</span>` : ''}
         ${p.emoji}
       </div>
       <div class="card-body">
-        <span class="card-cat">${p.category}</span>
+        <span class="card-cat">${p.category} › ${p.subcategory}</span>
         <h3 class="card-title">${p.title}</h3>
         <p class="card-desc">${p.desc}</p>
         <div class="card-price-row">
@@ -264,25 +223,61 @@ function render() {
         <div class="card-actions">
           <button class="btn btn-primary" data-action="preview" data-id="${p.id}">👁 Preview</button>
           <button class="btn" data-action="download-free" data-id="${p.id}">⬇ Coba Gratis</button>
-          <button class="icon-btn ${p.archived ? "active" : ""}" data-action="archive" data-id="${p.id}" title="${p.archived ? "Keluarkan dari arsip" : "Arsipkan"}">
-            ${p.archived ? "📤" : "📦"}
-          </button>
         </div>
       </div>
     `;
     grid.appendChild(card);
   });
 
+  // Filter info bar
+  if (state.filter === "sub") {
+    filterInfo.style.display = "flex";
+    filterInfoText.textContent = `📂 Arsip: ${state.filterCat} › ${state.filterSub} (${filtered.length} project)`;
+  } else {
+    filterInfo.style.display = "none";
+  }
+
   updateStats();
 }
 
 function updateStats() {
-  const active = state.projects.filter(p => !p.archived);
-  document.getElementById("statTotal").textContent = active.length;
+  document.getElementById("statTotal").textContent = state.projects.length;
   document.getElementById("statFree").textContent =
-    active.filter(p => p.plans.free.price === 0).length;
+    state.projects.filter(p => p.plans.free.price === 0).length;
   document.getElementById("statPaid").textContent =
-    active.filter(p => p.plans.premium.price > 0).length;
+    state.projects.filter(p => p.plans.premium.price > 0).length;
+}
+
+/* ============ RENDER ARSIP PER KATEGORI ============ */
+function renderArchive() {
+  const grouped = {};
+  state.projects.forEach(p => {
+    if (!grouped[p.category]) grouped[p.category] = {};
+    if (!grouped[p.category][p.subcategory]) grouped[p.category][p.subcategory] = [];
+    grouped[p.category][p.subcategory].push(p);
+  });
+
+  archiveContainer.innerHTML = "";
+
+  Object.keys(grouped).sort().forEach(cat => {
+    const subcats = grouped[cat];
+    const total = Object.values(subcats).reduce((s, arr) => s + arr.length, 0);
+
+    const catDiv = document.createElement("div");
+    catDiv.className = "archive-category";
+    catDiv.innerHTML = `
+      <h3>📁 ${cat} <span class="count">${total} project</span></h3>
+      <div class="archive-sub-grid">
+        ${Object.keys(subcats).sort().map(sub => `
+          <div class="archive-sub" data-cat="${cat}" data-sub="${sub}">
+            <span class="sub-name">${sub}</span>
+            <span class="sub-count">${subcats[sub].length}</span>
+          </div>
+        `).join("")}
+      </div>
+    `;
+    archiveContainer.appendChild(catDiv);
+  });
 }
 
 /* ============ EVENT: SEARCH ============ */
@@ -291,14 +286,45 @@ searchInput.addEventListener("input", e => {
   render();
 });
 
-/* ============ EVENT: FILTER ============ */
+/* ============ EVENT: FILTER CHIP ============ */
 filters.addEventListener("click", e => {
   const chip = e.target.closest(".chip");
   if (!chip) return;
   filters.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
   chip.classList.add("active");
   state.filter = chip.dataset.filter;
+  state.filterCat = null;
+  state.filterSub = null;
   render();
+});
+
+/* ============ EVENT: RESET FILTER ARSIP ============ */
+clearFilterBtn.addEventListener("click", () => {
+  state.filter = "all";
+  state.filterCat = null;
+  state.filterSub = null;
+  filters.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+  filters.querySelector('.chip[data-filter="all"]').classList.add("active");
+  render();
+  showToast("🔄 Filter direset");
+});
+
+/* ============ EVENT: KLIK SUBKATEGORI ARSIP ============ */
+archiveContainer.addEventListener("click", e => {
+  const sub = e.target.closest(".archive-sub");
+  if (!sub) return;
+  const cat = sub.dataset.cat;
+  const subcat = sub.dataset.sub;
+
+  state.filter = "sub";
+  state.filterCat = cat;
+  state.filterSub = subcat;
+
+  filters.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+
+  render();
+  showToast(`📂 Menampilkan arsip: ${cat} › ${subcat}`);
+  document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
 });
 
 /* ============ EVENT: CARD ACTIONS ============ */
@@ -312,7 +338,6 @@ grid.addEventListener("click", e => {
   const action = btn.dataset.action;
   if (action === "preview")       openPreview(project);
   if (action === "download-free") downloadFree(project);
-  if (action === "archive")       toggleArchive(project);
 });
 
 /* ============ PREVIEW ============ */
@@ -324,7 +349,7 @@ const previewActions = document.getElementById("previewActions");
 
 function openPreview(p) {
   previewTitle.textContent = p.title;
-  previewDesc.textContent = p.desc;
+  previewDesc.textContent = `${p.category} › ${p.subcategory} — ${p.desc}`;
   previewFrame.src = p.demoUrl;
 
   const f = p.plans.free, pr = p.plans.premium;
@@ -343,16 +368,10 @@ function openPreview(p) {
         <button class="btn btn-primary full" id="dlPremium">🔒 Beli Premium</button>
       </div>
     </div>
-    <button class="btn full" id="modalArchive" style="margin-top:14px">
-      ${p.archived ? "📤 Keluarkan dari Arsip" : "📦 Arsipkan"}
-    </button>
   `;
 
   previewActions.querySelector("#dlFree").onclick = () => downloadFree(p);
   previewActions.querySelector("#dlPremium").onclick = () => handlePremium(p, true);
-  previewActions.querySelector("#modalArchive").onclick = () => {
-    toggleArchive(p); closePreview();
-  };
 
   previewModal.classList.add("show");
   document.body.style.overflow = "hidden";
@@ -377,10 +396,8 @@ function downloadFree(p) {
 
 /* ============ PREMIUM / BAYAR ============ */
 const payModal = document.getElementById("payModal");
-let currentPayProject = null;
 
 function handlePremium(p, fromModal = false) {
-  currentPayProject = p;
   document.getElementById("payProjectName").textContent = p.title + " — Premium";
   document.getElementById("payPrice").textContent =
     "Rp " + p.plans.premium.price.toLocaleString("id-ID");
@@ -402,13 +419,6 @@ document.getElementById("payConfirm").onclick = () => {
   showToast("✅ Pembayaran sukses! Link Premium dikirim ke " + email);
   // Di produksi: integrasikan Midtrans/Xendit di sini
 };
-
-/* ============ ARSIP ============ */
-function toggleArchive(p) {
-  p.archived = !p.archived;
-  showToast(p.archived ? "📦 Disimpan ke arsip" : "📤 Dikeluarkan dari arsip");
-  render();
-}
 
 /* ============ TOAST ============ */
 let toastTimer;
@@ -434,3 +444,4 @@ if (localStorage.getItem("theme") === "light") {
 
 /* ============ INIT ============ */
 render();
+renderArchive();
