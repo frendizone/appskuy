@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Appskuy — Project Digital untuk Pemilik Usaha & Developer</title>
-<meta name="description" content="Appskuy — Kumpulan project digital untuk pemilik usaha & developer. Download gratis dengan fitur dasar, upgrade premium untuk fitur penuh. Preview langsung, arsip per kategori.">
+<meta name="description" content="Appskuy — Kumpulan project digital untuk pemilik usaha & developer. Daftar member gratis untuk download, upgrade premium untuk fitur penuh. Preview langsung.">
 
 <!-- Favicon inline SVG -->
 <link rel="icon" type="image/svg+xml"
@@ -39,11 +39,14 @@
     </a>
     <nav class="nav-links">
       <a href="#projects" class="active">Projects</a>
-      <a href="#archive">Arsip</a>
+      <a href="#stats">Statistik</a>
       <a href="#pricing">Paket</a>
       <a href="#about">Tentang</a>
     </nav>
     <div class="nav-actions">
+      <button class="btn-member" id="openRegister">
+        <span id="memberLabel">👤 Daftar Member</span>
+      </button>
       <button class="btn-icon" id="themeToggle" title="Ganti tema">🌙</button>
     </div>
   </div>
@@ -55,7 +58,7 @@
     <div class="hero-badge">🏪 Untuk Pemilik Usaha & 👨‍💻 Developer</div>
     <h1>Selamat datang di <span class="gradient">Appskuy</span></h1>
     <p>Platform kumpulan project digital untuk <strong>pemilik usaha maupun developer</strong>.
-       <strong>Download gratis dengan fitur dasar</strong>, atau upgrade ke versi premium
+       <strong>Daftar gratis</strong> untuk download versi dasar, atau upgrade ke premium
        untuk membuka semua fitur. Preview dulu, baru putuskan.</p>
     <div class="hero-stats">
       <div><strong id="statTotal">0</strong><span>Project</span></div>
@@ -64,8 +67,41 @@
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">Jelajahi Project</a>
-      <a href="#archive" class="btn">Lihat Arsip</a>
+      <a href="#pricing" class="btn">Lihat Paket</a>
     </div>
+  </div>
+</section>
+
+<!-- STATISTIK PENGUNJUNG -->
+<section class="container" id="stats">
+  <div class="stats-panel">
+    <div class="stats-head">
+      <h2>📊 Statistik Appskuy</h2>
+      <span class="live-dot"><span></span> Live</span>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-icon">👥</div>
+        <strong id="visitCount">0</strong>
+        <span>Total Pengunjung</span>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">🟢</div>
+        <strong id="onlineCount">0</strong>
+        <span>Online Sekarang</span>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">🧑‍💻</div>
+        <strong id="memberCount">0</strong>
+        <span>Member Terdaftar</span>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">⬇️</div>
+        <strong id="downloadCount">0</strong>
+        <span>Total Download</span>
+      </div>
+    </div>
+    <p class="stats-note">*Data demo disimpan di localStorage browser kamu.</p>
   </div>
 </section>
 
@@ -83,40 +119,31 @@
     </div>
   </div>
 
-  <div class="filter-info" id="filterInfo" style="display:none">
-    <span id="filterInfoText"></span>
-    <button id="clearFilter">✕ Reset</button>
-  </div>
-
   <div class="grid" id="projectGrid"></div>
   <div class="empty" id="emptyState" style="display:none">
     <p>😕 Tidak ada project yang cocok.</p>
   </div>
-</section>
 
-<!-- ARSIP DOKUMEN PER KATEGORI -->
-<section class="container" id="archive" style="padding:40px 0">
-  <h2 class="section-title">📚 Arsip Project</h2>
-  <p class="section-sub">Kumpulan dokumen project berdasarkan kategori</p>
-  <div id="archiveContainer"></div>
+  <!-- PAGINATION -->
+  <div class="pagination" id="pagination"></div>
 </section>
 
 <!-- PRICING -->
 <section class="container" id="pricing" style="padding:50px 0">
   <h2 class="section-title">Pilih Paketmu</h2>
-  <p class="section-sub">Mulai gratis, upgrade kapan saja.</p>
+  <p class="section-sub">Daftar gratis, upgrade kapan saja.</p>
   <div class="plan-compare">
     <div class="plan-card">
-      <h4>Gratis</h4>
+      <h4>Gratis (Member)</h4>
       <p class="plan-price">Rp 0</p>
       <ul>
-        <li>✅ Semua project versi dasar</li>
+        <li>✅ Wajib daftar email</li>
+        <li>✅ Download semua project versi dasar</li>
         <li>✅ Fitur terbatas</li>
         <li>✅ Preview aplikasi</li>
-        <li>✅ Arsip per kategori</li>
         <li>❌ Support prioritas</li>
       </ul>
-      <a href="#projects" class="btn btn-primary full">Mulai Gratis</a>
+      <button class="btn btn-primary full" id="pricingRegister">Daftar Gratis</button>
     </div>
     <div class="plan-card premium">
       <h4>Premium</h4>
@@ -148,6 +175,19 @@
   </div>
 </div>
 
+<!-- MODAL PENDAFTARAN MEMBER -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal small">
+    <button class="modal-close" id="closeRegister">✕</button>
+    <h2>👤 Daftar Member Gratis</h2>
+    <p class="modal-sub">Isi data di bawah untuk download project gratis.</p>
+    <input type="text" id="regName" placeholder="Nama lengkap" autocomplete="name">
+    <input type="email" id="regEmail" placeholder="Email aktif" autocomplete="email">
+    <button class="btn btn-primary full" id="regSubmit">Daftar & Lanjut Download</button>
+    <p class="pay-note">*Data hanya disimpan di browser kamu (demo).</p>
+  </div>
+</div>
+
 <!-- MODAL PEMBAYARAN -->
 <div class="modal-overlay" id="payModal">
   <div class="modal small">
@@ -167,6 +207,15 @@
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
+<!-- TOMBOL WA MELAYANG -->
+<a href="https://wa.me/6281234567890?text=Halo%20Admin%20Appskuy%2C%20saya%20ingin%20bertanya%20tentang%20project."
+   class="wa-float" target="_blank" rel="noopener" title="Hubungi Admin via WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7 1 3.7 1.6 5.7 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9.9.9-4.8-.3-.4c-1-1.6-1.4-3.4-1.4-5.1 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.1s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/>
+  </svg>
+  <span class="wa-tooltip">Chat Admin</span>
+</a>
+
 <!-- FOOTER -->
 <footer class="footer" id="about">
   <div class="container footer-inner">
@@ -181,7 +230,7 @@
       <strong>Appskuy</strong>
     </div>
     <p class="footer-desc">Platform kumpulan project digital untuk pemilik usaha & developer.<br>
-       Mulai gratis, upgrade kapan saja.</p>
+       Daftar gratis, upgrade kapan saja.</p>
     <p>© 2025 Appskuy. Dibuat dengan ❤️ untuk developer Indonesia.</p>
   </div>
 </footer>
