@@ -38,8 +38,6 @@
     </a>
     <nav class="nav-links">
       <a href="#projects" class="active">Projects</a>
-      <a href="#stats">Statistik</a>
-      <a href="#pricing">Paket</a>
       <a href="#about">Tentang</a>
     </nav>
     <div class="nav-actions">
@@ -63,41 +61,7 @@
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">Jelajahi Project</a>
-      <a href="#pricing" class="btn">Lihat Paket</a>
     </div>
-  </div>
-</section>
-
-<!-- STATISTIK PENGUNJUNG -->
-<section class="container" id="stats">
-  <div class="stats-panel">
-    <div class="stats-head">
-      <h2>📊 Statistik Appskuy</h2>
-      <span class="live-dot"><span></span> Live</span>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-icon">👥</div>
-        <strong id="visitCount">0</strong>
-        <span>Total Pengunjung</span>
-      </div>
-      <div class="stat-box">
-        <div class="stat-icon">🟢</div>
-        <strong id="onlineCount">0</strong>
-        <span>Online Sekarang</span>
-      </div>
-      <div class="stat-box">
-        <div class="stat-icon">👁️</div>
-        <strong id="viewCount">0</strong>
-        <span>Total Preview</span>
-      </div>
-      <div class="stat-box">
-        <div class="stat-icon">💬</div>
-        <strong id="waCount">0</strong>
-        <span>Chat via WA</span>
-      </div>
-    </div>
-    <p class="stats-note">*Data demo disimpan di localStorage browser kamu.</p>
   </div>
 </section>
 
@@ -123,49 +87,12 @@
   <div class="pagination" id="pagination"></div>
 </section>
 
-<!-- PRICING -->
-<section class="container" id="pricing" style="padding:50px 0">
-  <h2 class="section-title">Pilih Paketmu</h2>
-  <p class="section-sub">Konsultasi gratis via WhatsApp, upgrade kapan saja.</p>
-  <div class="plan-compare">
-    <div class="plan-card">
-      <h4>Versi Gratis</h4>
-      <p class="plan-price">Rp 0</p>
-      <ul>
-        <li>✅ Preview video & gambar</li>
-        <li>✅ Versi dasar (fitur terbatas)</li>
-        <li>✅ Konsultasi via WA</li>
-        <li>✅ Cocok untuk coba-coba</li>
-        <li>❌ Support prioritas</li>
-      </ul>
-      <button class="btn btn-primary full" id="pricingWaFree">💬 Tanya Versi Gratis</button>
-    </div>
-    <div class="plan-card premium">
-      <h4>Premium</h4>
-      <p class="plan-price">Mulai Rp 150.000</p>
-      <ul>
-        <li>✅ Semua fitur versi gratis</li>
-        <li>✅ Fitur penuh tanpa batas</li>
-        <li>✅ Update gratis selamanya</li>
-        <li>✅ Support prioritas 24/7</li>
-        <li>✅ Lisensi komersial</li>
-      </ul>
-      <button class="btn btn-primary full" id="pricingWaPremium">💬 Konsultasi Premium</button>
-    </div>
-  </div>
-</section>
-
 <!-- MODAL PREVIEW (VIDEO / GAMBAR) -->
 <div class="modal-overlay" id="previewModal">
   <div class="modal">
     <button class="modal-close" id="closePreview">✕</button>
-
-    <!-- Media area -->
     <div class="preview-media" id="previewMedia"></div>
-
-    <!-- Thumbnail strip (jika ada gambar/thumbnail lain) -->
     <div class="preview-thumbs" id="previewThumbs"></div>
-
     <div class="modal-body">
       <h2 id="previewTitle"></h2>
       <p id="previewDesc"></p>
