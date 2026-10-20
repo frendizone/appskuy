@@ -1,143 +1,161 @@
+/* ============ KONFIGURASI WA ============ */
+const WA_ADMIN = "6281234567890"; // 🔧 GANTI dengan nomor WA admin asli
+
 /* ============ DATA PROJECT ============ */
+/* Setiap project punya:
+   - thumbnail: gambar utama (URL)
+   - videoUrl : (opsional) video preview (URL mp4 / YouTube embed)
+   - gallery  : array gambar tambahan (opsional)
+   - plans.free / plans.premium
+*/
 const PROJECTS = [
   {
     id: 1, title: "Landing Page UMKM Kopi",
     desc: "Template landing page modern untuk kedai kopi, responsive, dengan animasi scroll.",
     category: "Web", subcategory: "Landing Page", emoji: "☕",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/kopi/600/400",
+    videoUrl: "", // isi URL mp4 untuk video preview
+    gallery: [
+      "https://picsum.photos/seed/kopi1/600/400",
+      "https://picsum.photos/seed/kopi2/600/400",
+      "https://picsum.photos/seed/kopi3/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ 1 halaman", "✅ Responsive", "✅ Dark mode", "❌ Multi-halaman", "❌ Form kontak", "❌ SEO optimization"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 100000,
-        features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Form kontak", "✅ SEO optimization", "✅ Integrasi WhatsApp", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ 1 halaman", "✅ Responsive", "✅ Dark mode", "❌ Multi-halaman", "❌ Form kontak", "❌ SEO optimization"] },
+      premium: { price: 100000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Form kontak", "✅ SEO optimization", "✅ Integrasi WhatsApp", "✅ Support prioritas"] }
     }
   },
   {
     id: 2, title: "Company Profile Agency",
     desc: "Website company profile profesional untuk agency/konsultan, dengan halaman tim & portfolio.",
     category: "Web", subcategory: "Company Profile", emoji: "🏢",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/agency/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/agency1/600/400",
+      "https://picsum.photos/seed/agency2/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ 3 halaman", "✅ Responsive", "✅ Halaman tim", "❌ Blog", "❌ Multi-bahasa", "❌ SEO optimization"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 200000,
-        features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Blog", "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ 3 halaman", "✅ Responsive", "✅ Halaman tim", "❌ Blog", "❌ Multi-bahasa", "❌ SEO optimization"] },
+      premium: { price: 200000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Blog", "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"] }
     }
   },
   {
     id: 3, title: "E-Commerce Dashboard",
     desc: "Dashboard admin toko online dengan chart penjualan, manajemen produk, dan laporan real-time.",
     category: "Web", subcategory: "Dashboard", emoji: "🛒",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/dash/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/dash1/600/400",
+      "https://picsum.photos/seed/dash2/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ 1 toko / 1 user", "✅ Manajemen produk dasar", "✅ Laporan harian", "❌ Multi-outlet", "❌ Export Excel/PDF", "❌ Support prioritas"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 150000,
-        features: ["✅ Unlimited toko & user", "✅ Semua fitur gratis", "✅ Multi-outlet", "✅ Export Excel/PDF", "✅ Support prioritas 24/7", "✅ Update gratis"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ 1 toko / 1 user", "✅ Manajemen produk dasar", "✅ Laporan harian", "❌ Multi-outlet", "❌ Export Excel/PDF", "❌ Support prioritas"] },
+      premium: { price: 150000, features: ["✅ Unlimited toko & user", "✅ Semua fitur gratis", "✅ Multi-outlet", "✅ Export Excel/PDF", "✅ Support prioritas 24/7", "✅ Update gratis"] }
     }
   },
   {
     id: 4, title: "Toko Online Sederhana",
     desc: "Website e-commerce siap pakai untuk UMKM: katalog produk, keranjang, checkout WhatsApp.",
     category: "Web", subcategory: "E-Commerce", emoji: "🛍️",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/toko/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/toko1/600/400",
+      "https://picsum.photos/seed/toko2/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ Maks 20 produk", "✅ Katalog produk", "✅ Checkout WhatsApp", "❌ Payment gateway", "❌ Multi-vendor", "❌ Laporan penjualan"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 250000,
-        features: ["✅ Unlimited produk", "✅ Semua fitur gratis", "✅ Payment gateway", "✅ Multi-vendor", "✅ Laporan penjualan", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ Maks 20 produk", "✅ Katalog produk", "✅ Checkout WhatsApp", "❌ Payment gateway", "❌ Multi-vendor", "❌ Laporan penjualan"] },
+      premium: { price: 250000, features: ["✅ Unlimited produk", "✅ Semua fitur gratis", "✅ Payment gateway", "✅ Multi-vendor", "✅ Laporan penjualan", "✅ Support prioritas"] }
     }
   },
   {
     id: 5, title: "Aplikasi Kasir (POS)",
     desc: "Point of Sale lengkap: scan barcode, struk digital, multi-outlet, dan laporan harian.",
     category: "Desktop", subcategory: "POS", emoji: "💳",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/pos/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/pos1/600/400",
+      "https://picsum.photos/seed/pos2/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ 1 kasir / 1 device", "✅ Transaksi dasar", "✅ Struk digital", "❌ Multi-outlet", "❌ Barcode scanner", "❌ Laporan lanjutan"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 250000,
-        features: ["✅ Unlimited kasir & device", "✅ Semua fitur gratis", "✅ Multi-outlet", "✅ Barcode scanner", "✅ Laporan lanjutan + export", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ 1 kasir / 1 device", "✅ Transaksi dasar", "✅ Struk digital", "❌ Multi-outlet", "❌ Barcode scanner", "❌ Laporan lanjutan"] },
+      premium: { price: 250000, features: ["✅ Unlimited kasir & device", "✅ Semua fitur gratis", "✅ Multi-outlet", "✅ Barcode scanner", "✅ Laporan lanjutan + export", "✅ Support prioritas"] }
     }
   },
   {
     id: 6, title: "Aplikasi Absensi QR",
     desc: "Absensi karyawan via QR code, rekap otomatis, export Excel, dan geofencing.",
     category: "Mobile", subcategory: "Absensi", emoji: "📱",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/absensi/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/absensi1/600/400",
+      "https://picsum.photos/seed/absensi2/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ Maks 10 karyawan", "✅ Absensi QR dasar", "✅ Rekap harian", "❌ Geofencing", "❌ Export Excel", "❌ Multi-cabang"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 300000,
-        features: ["✅ Unlimited karyawan", "✅ Semua fitur gratis", "✅ Geofencing", "✅ Export Excel & PDF", "✅ Multi-cabang", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ Maks 10 karyawan", "✅ Absensi QR dasar", "✅ Rekap harian", "❌ Geofencing", "❌ Export Excel", "❌ Multi-cabang"] },
+      premium: { price: 300000, features: ["✅ Unlimited karyawan", "✅ Semua fitur gratis", "✅ Geofencing", "✅ Export Excel & PDF", "✅ Multi-cabang", "✅ Support prioritas"] }
     }
   },
   {
     id: 7, title: "Portfolio Generator",
     desc: "Buat website portofolio otomatis dari input JSON. Support custom domain dan tema.",
     category: "Website", subcategory: "Portfolio", emoji: "🎨",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/portfolio/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/portfolio1/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ 1 template", "✅ Subdomain appskuy", "✅ Auto-generate dari JSON", "❌ Custom domain", "❌ Semua template", "❌ Analytics"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 75000,
-        features: ["✅ Semua template", "✅ Custom domain", "✅ Analytics", "✅ Tanpa watermark", "✅ Update gratis", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,     features: ["✅ 1 template", "✅ Subdomain appskuy", "✅ Auto-generate dari JSON", "❌ Custom domain", "❌ Semua template", "❌ Analytics"] },
+      premium: { price: 75000, features: ["✅ Semua template", "✅ Custom domain", "✅ Analytics", "✅ Tanpa watermark", "✅ Update gratis", "✅ Support prioritas"] }
     }
   },
   {
     id: 8, title: "Sistem Manajemen Sekolah",
     desc: "SIAKAD lengkap: siswa, guru, jadwal, nilai, pembayaran SPP, dan portal orang tua.",
     category: "Web", subcategory: "Dashboard", emoji: "🏫",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/sekolah/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/sekolah1/600/400",
+      "https://picsum.photos/seed/sekolah2/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ Maks 50 siswa", "✅ Data siswa & guru", "✅ Jadwal dasar", "❌ Modul SPP", "❌ Portal orang tua", "❌ Multi-tahun ajaran"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 450000,
-        features: ["✅ Unlimited siswa", "✅ Semua fitur gratis", "✅ Modul SPP lengkap", "✅ Portal orang tua", "✅ Multi-tahun ajaran", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ Maks 50 siswa", "✅ Data siswa & guru", "✅ Jadwal dasar", "❌ Modul SPP", "❌ Portal orang tua", "❌ Multi-tahun ajaran"] },
+      premium: { price: 450000, features: ["✅ Unlimited siswa", "✅ Semua fitur gratis", "✅ Modul SPP lengkap", "✅ Portal orang tua", "✅ Multi-tahun ajaran", "✅ Support prioritas"] }
     }
   },
   {
     id: 9, title: "Landing Page Restoran",
     desc: "Landing page restoran dengan menu digital, galeri, dan tombol reservasi WhatsApp.",
     category: "Web", subcategory: "Landing Page", emoji: "🍜",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/resto/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/resto1/600/400",
+      "https://picsum.photos/seed/resto2/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ 1 halaman", "✅ Menu digital", "✅ Tombol reservasi WA", "❌ Galeri foto", "❌ Multi-bahasa", "❌ SEO optimization"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 120000,
-        features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Galeri foto", "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ 1 halaman", "✅ Menu digital", "✅ Tombol reservasi WA", "❌ Galeri foto", "❌ Multi-bahasa", "❌ SEO optimization"] },
+      premium: { price: 120000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Galeri foto", "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"] }
     }
   },
   {
     id: 10, title: "Aplikasi Laundry",
     desc: "Aplikasi manajemen laundry: input order, tracking status, notifikasi WA ke pelanggan.",
     category: "Mobile", subcategory: "Kasir", emoji: "🧺",
-    demoUrl: "https://example.com",
+    thumbnail: "https://picsum.photos/seed/laundry/600/400",
+    videoUrl: "",
+    gallery: [
+      "https://picsum.photos/seed/laundry1/600/400"
+    ],
     plans: {
-      free: { price: 0,
-        features: ["✅ Maks 30 order/bulan", "✅ Input order", "✅ Tracking status", "❌ Notifikasi WA", "❌ Multi-outlet", "❌ Laporan keuangan"],
-        downloadUrl: "https://example.com/demo.zip" },
-      premium: { price: 200000,
-        features: ["✅ Unlimited order", "✅ Semua fitur gratis", "✅ Notifikasi WA", "✅ Multi-outlet", "✅ Laporan keuangan", "✅ Support prioritas"],
-        downloadUrl: "https://example.com/full.zip" }
+      free:    { price: 0,      features: ["✅ Maks 30 order/bulan", "✅ Input order", "✅ Tracking status", "❌ Notifikasi WA", "❌ Multi-outlet", "❌ Laporan keuangan"] },
+      premium: { price: 200000, features: ["✅ Unlimited order", "✅ Semua fitur gratis", "✅ Notifikasi WA", "✅ Multi-outlet", "✅ Laporan keuangan", "✅ Support prioritas"] }
     }
   }
 ];
@@ -158,11 +176,8 @@ const searchInput = document.getElementById("searchInput");
 const filters = document.getElementById("filters");
 const toast = document.getElementById("toast");
 const pagination = document.getElementById("pagination");
-const memberLabel = document.getElementById("memberLabel");
-const openRegisterBtn = document.getElementById("openRegister");
-const pricingRegisterBtn = document.getElementById("pricingRegister");
 
-/* ============ STORAGE HELPERS ============ */
+/* ============ STORAGE ============ */
 const store = {
   get(key, def) {
     try { const v = localStorage.getItem("appskuy_" + key); return v ? JSON.parse(v) : def; }
@@ -173,52 +188,52 @@ const store = {
 
 /* ============ VISITOR TRACKING ============ */
 function initVisitor() {
-  // Increment total pengunjung (per sesi)
   if (!sessionStorage.getItem("appskuy_session")) {
     const visits = store.get("visits", 0) + 1;
     store.set("visits", visits);
     sessionStorage.setItem("appskuy_session", "1");
   }
-  // Online = simulasi random 5-25
+  updateOnline();
+  setInterval(updateOnline, 8000);
+  updateStatsPanel();
+}
+
+function updateOnline() {
   const online = Math.floor(Math.random() * 20) + 5;
   document.getElementById("onlineCount").textContent = online;
-  // Update online tiap 8 detik
-  setInterval(() => {
-    const o = Math.floor(Math.random() * 20) + 5;
-    document.getElementById("onlineCount").textContent = o;
-  }, 8000);
-  updateStatsPanel();
 }
 
 function updateStatsPanel() {
   document.getElementById("visitCount").textContent = store.get("visits", 0).toLocaleString("id-ID");
-  document.getElementById("memberCount").textContent = store.get("members", []).length.toLocaleString("id-ID");
-  document.getElementById("downloadCount").textContent = store.get("downloads", 0).toLocaleString("id-ID");
+  document.getElementById("viewCount").textContent = store.get("views", 0).toLocaleString("id-ID");
+  document.getElementById("waCount").textContent = store.get("waClicks", 0).toLocaleString("id-ID");
 }
 
-/* ============ MEMBER ============ */
-function getMember() {
-  return store.get("currentMember", null);
-}
-function setMember(m) {
-  store.set("currentMember", m);
-  updateMemberUI();
-}
-function updateMemberUI() {
-  const m = getMember();
-  if (m) {
-    memberLabel.textContent = "👤 " + (m.name.split(" ")[0] || "Member");
-    openRegisterBtn.classList.add("logged");
-    openRegisterBtn.title = m.email;
-  } else {
-    memberLabel.textContent = "👤 Daftar Member";
-    openRegisterBtn.classList.remove("logged");
-    openRegisterBtn.title = "";
-  }
+/* ============ WA HELPERS ============ */
+function openWA(message) {
+  const url = `https://wa.me/${WA_ADMIN}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+  // Increment counter WA click
+  const wc = store.get("waClicks", 0) + 1;
+  store.set("waClicks", wc);
   updateStatsPanel();
 }
 
-/* ============ RENDER PROJECT GRID ============ */
+function waAsk(project, plan) {
+  const planLabel = plan === "premium"
+    ? `Premium (Rp ${project.plans.premium.price.toLocaleString("id-ID")})`
+    : "Gratis (fitur terbatas)";
+  const msg =
+    `Halo Admin Appskuy 👋\n\n` +
+    `Saya tertarik dengan project:\n\n` +
+    `📦 *${project.title}*\n` +
+    `📂 Kategori: ${project.category} › ${project.subcategory}\n` +
+    `💰 Paket: ${planLabel}\n\n` +
+    `Mohon info lengkap & cara ordernya. Terima kasih! 🙏`;
+  openWA(msg);
+}
+
+/* ============ RENDER GRID ============ */
 function render() {
   const filtered = state.projects.filter(p => {
     const q = state.search;
@@ -244,11 +259,15 @@ function render() {
     const card = document.createElement("div");
     card.className = "card";
     const premiumPrice = p.plans.premium.price;
+    const hasVideo = !!p.videoUrl;
     card.innerHTML = `
-      <div class="card-img">
+      <div class="card-thumb" data-action="preview" data-id="${p.id}">
+        <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
         <span class="card-badge badge-free">GRATIS</span>
         ${premiumPrice > 0 ? `<span class="card-badge badge-paid badge-second">PREMIUM</span>` : ''}
-        ${p.emoji}
+        <div class="play-badge">
+          <div class="play-icon"></div>
+        </div>
       </div>
       <div class="card-body">
         <span class="card-cat">${p.category} › ${p.subcategory}</span>
@@ -259,8 +278,8 @@ function render() {
           ${premiumPrice > 0 ? `<span class="price-tag paid">Premium · Rp ${premiumPrice.toLocaleString("id-ID")}</span>` : ''}
         </div>
         <div class="card-actions">
-          <button class="btn btn-primary" data-action="preview" data-id="${p.id}">👁 Preview</button>
-          <button class="btn" data-action="download-free" data-id="${p.id}">⬇ Coba Gratis</button>
+          <button class="btn btn-primary" data-action="preview" data-id="${p.id}">${hasVideo ? "▶ Lihat Video" : "🖼 Lihat Preview"}</button>
+          <button class="btn btn-wa" data-action="wa" data-id="${p.id}">💬 Tanya</button>
         </div>
       </div>
     `;
@@ -322,175 +341,143 @@ filters.addEventListener("click", e => {
 
 /* ============ EVENT: CARD ACTIONS ============ */
 grid.addEventListener("click", e => {
-  const btn = e.target.closest("[data-action]");
-  if (!btn) return;
-  const id = Number(btn.dataset.id);
+  const el = e.target.closest("[data-action]");
+  if (!el) return;
+  const id = Number(el.dataset.id);
   const project = state.projects.find(p => p.id === id);
   if (!project) return;
 
-  const action = btn.dataset.action;
-  if (action === "preview")       openPreview(project);
-  if (action === "download-free") tryDownloadFree(project);
+  const action = el.dataset.action;
+  if (action === "preview") openPreview(project);
+  if (action === "wa")      waAsk(project, "free");
 });
 
-/* ============ DOWNLOAD GRATIS (WAJIB MEMBER) ============ */
-let pendingDownloadProject = null;
-
-function tryDownloadFree(p) {
-  const member = getMember();
-  if (!member) {
-    pendingDownloadProject = p;
-    openRegisterModal();
-    showToast("👤 Daftar dulu untuk download gratis");
-    return;
-  }
-  // Sudah member → langsung download
-  doDownloadFree(p);
-}
-
-function doDownloadFree(p) {
-  // Increment counter download
-  const dl = store.get("downloads", 0) + 1;
-  store.set("downloads", dl);
-  updateStatsPanel();
-
-  showToast("⬇️ Download versi GRATIS dimulai (fitur terbatas)");
-  // window.open(p.plans.free.downloadUrl, "_blank"); // aktifkan di produksi
-  setTimeout(() => {
-    showToast("ℹ️ Versi gratis aktif. Upgrade ke Premium untuk fitur penuh.");
-  }, 2000);
-}
-
-/* ============ MODAL REGISTER ============ */
-const registerModal = document.getElementById("registerModal");
-const regName = document.getElementById("regName");
-const regEmail = document.getElementById("regEmail");
-const regSubmit = document.getElementById("regSubmit");
-
-function openRegisterModal() {
-  const m = getMember();
-  if (m) {
-    // Sudah login → tampilkan info
-    regName.value = m.name;
-    regEmail.value = m.email;
-  }
-  registerModal.classList.add("show");
-  document.body.style.overflow = "hidden";
-}
-function closeRegisterModal() {
-  registerModal.classList.remove("show");
-  document.body.style.overflow = "";
-  pendingDownloadProject = null;
-}
-
-openRegisterBtn.onclick = openRegisterModal;
-pricingRegisterBtn.onclick = openRegisterModal;
-document.getElementById("closeRegister").onclick = closeRegisterModal;
-registerModal.addEventListener("click", e => { if (e.target === registerModal) closeRegisterModal(); });
-
-regSubmit.onclick = () => {
-  const name = regName.value.trim();
-  const email = regEmail.value.trim();
-
-  if (!name || name.length < 2) {
-    showToast("⚠️ Masukkan nama yang valid");
-    return;
-  }
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    showToast("⚠️ Masukkan email yang valid");
-    return;
-  }
-
-  // Simpan member
-  const members = store.get("members", []);
-  const exists = members.find(m => m.email.toLowerCase() === email.toLowerCase());
-  if (!exists) {
-    members.push({ name, email, joinedAt: Date.now() });
-    store.set("members", members);
-  }
-  setMember({ name, email });
-
-  closeRegisterModal();
-  showToast(`✅ Selamat datang, ${name.split(" ")[0]}!`);
-
-  // Lanjutkan download yang tertunda
-  if (pendingDownloadProject) {
-    const p = pendingDownloadProject;
-    pendingDownloadProject = null;
-    setTimeout(() => doDownloadFree(p), 600);
-  }
-};
-
-/* ============ PREVIEW ============ */
+/* ============ PREVIEW MODAL ============ */
 const previewModal = document.getElementById("previewModal");
-const previewFrame = document.getElementById("previewFrame");
+const previewMedia = document.getElementById("previewMedia");
+const previewThumbs = document.getElementById("previewThumbs");
 const previewTitle = document.getElementById("previewTitle");
 const previewDesc = document.getElementById("previewDesc");
 const previewActions = document.getElementById("previewActions");
 
+let currentPreview = { project: null, mediaList: [], mediaIndex: 0 };
+
 function openPreview(p) {
+  currentPreview.project = p;
+
+  // Susun daftar media: video (jika ada) + gallery (atau thumbnail saja)
+  const mediaList = [];
+  if (p.videoUrl) mediaList.push({ type: "video", src: p.videoUrl, thumb: p.thumbnail });
+  const gallery = (p.gallery && p.gallery.length) ? p.gallery : [p.thumbnail];
+  gallery.forEach(src => mediaList.push({ type: "image", src, thumb: src }));
+
+  currentPreview.mediaList = mediaList;
+  currentPreview.mediaIndex = 0;
+
   previewTitle.textContent = p.title;
   previewDesc.textContent = `${p.category} › ${p.subcategory} — ${p.desc}`;
-  previewFrame.src = p.demoUrl;
 
+  renderPreviewMedia();
+  renderPreviewThumbs();
+  renderPreviewActions();
+
+  previewModal.classList.add("show");
+  document.body.style.overflow = "hidden";
+
+  // Increment view counter
+  const v = store.get("views", 0) + 1;
+  store.set("views", v);
+  updateStatsPanel();
+}
+
+function renderPreviewMedia() {
+  const item = currentPreview.mediaList[currentPreview.mediaIndex];
+  if (!item) { previewMedia.innerHTML = ""; return; }
+
+  if (item.type === "video") {
+    // Cek apakah URL YouTube
+    const ytMatch = item.src.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+    if (ytMatch) {
+      previewMedia.innerHTML = `
+        <iframe src="https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1"
+                frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen style="width:100%;height:100%;border:none;background:#000"></iframe>
+      `;
+    } else {
+      previewMedia.innerHTML = `
+        <video src="${item.src}" controls autoplay playsinline></video>
+      `;
+    }
+  } else {
+    previewMedia.innerHTML = `<img src="${item.src}" alt="Preview">`;
+  }
+}
+
+function renderPreviewThumbs() {
+  if (currentPreview.mediaList.length <= 1) { previewThumbs.innerHTML = ""; return; }
+  previewThumbs.innerHTML = currentPreview.mediaList.map((m, i) => `
+    <div class="thumb ${i === currentPreview.mediaIndex ? "active" : ""}" data-index="${i}">
+      <img src="${m.thumb}" alt="thumb ${i+1}">
+    </div>
+  `).join("");
+}
+
+previewThumbs.addEventListener("click", e => {
+  const t = e.target.closest(".thumb");
+  if (!t) return;
+  currentPreview.mediaIndex = Number(t.dataset.index);
+  renderPreviewMedia();
+  renderPreviewThumbs();
+});
+
+function renderPreviewActions() {
+  const p = currentPreview.project;
   const f = p.plans.free, pr = p.plans.premium;
+
+  // Hitung tombol WA
   previewActions.innerHTML = `
     <div class="plan-compare">
       <div class="plan-card">
-        <h4>Gratis</h4>
+        <h4>Versi Gratis</h4>
         <p class="plan-price">Rp 0</p>
         <ul>${f.features.map(x => `<li>${x}</li>`).join("")}</ul>
-        <button class="btn btn-primary full" id="dlFree">⬇ Download Gratis</button>
+        <button class="btn btn-wa full" id="waFree">💬 Tanya Versi Gratis</button>
       </div>
       <div class="plan-card premium">
         <h4>Premium</h4>
         <p class="plan-price">Rp ${pr.price.toLocaleString("id-ID")}</p>
         <ul>${pr.features.map(x => `<li>${x}</li>`).join("")}</ul>
-        <button class="btn btn-primary full" id="dlPremium">🔒 Beli Premium</button>
+        <button class="btn btn-wa full" id="waPremium">💬 Beli Premium</button>
       </div>
     </div>
   `;
-
-  previewActions.querySelector("#dlFree").onclick = () => tryDownloadFree(p);
-  previewActions.querySelector("#dlPremium").onclick = () => handlePremium(p, true);
-
-  previewModal.classList.add("show");
-  document.body.style.overflow = "hidden";
+  previewActions.querySelector("#waFree").onclick = () => waAsk(p, "free");
+  previewActions.querySelector("#waPremium").onclick = () => waAsk(p, "premium");
 }
 
 function closePreview() {
   previewModal.classList.remove("show");
-  previewFrame.src = "";
+  previewMedia.innerHTML = "";
+  previewThumbs.innerHTML = "";
   document.body.style.overflow = "";
 }
 document.getElementById("closePreview").onclick = closePreview;
 previewModal.addEventListener("click", e => { if (e.target === previewModal) closePreview(); });
 
-/* ============ PREMIUM / BAYAR ============ */
-const payModal = document.getElementById("payModal");
-
-function handlePremium(p, fromModal = false) {
-  document.getElementById("payProjectName").textContent = p.title + " — Premium";
-  document.getElementById("payPrice").textContent =
-    "Rp " + p.plans.premium.price.toLocaleString("id-ID");
-  document.getElementById("payEmail").value = "";
-  payModal.classList.add("show");
-  if (fromModal) closePreview();
-}
-
-document.getElementById("closePay").onclick = () => payModal.classList.remove("show");
-payModal.addEventListener("click", e => { if (e.target === payModal) payModal.classList.remove("show"); });
-
-document.getElementById("payConfirm").onclick = () => {
-  const email = document.getElementById("payEmail").value.trim();
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    showToast("⚠️ Masukkan email yang valid");
-    return;
-  }
-  payModal.classList.remove("show");
-  showToast("✅ Pembayaran sukses! Link Premium dikirim ke " + email);
-  // Di produksi: integrasikan Midtrans/Xendit di sini
+/* ============ PRICING → WA ============ */
+document.getElementById("pricingWaFree").onclick = () => {
+  openWA("Halo Admin Appskuy 👋\n\nSaya tertarik dengan paket *Versi Gratis*.\nMohon info project yang tersedia. Terima kasih! 🙏");
 };
+document.getElementById("pricingWaPremium").onclick = () => {
+  openWA("Halo Admin Appskuy 👋\n\nSaya tertarik dengan paket *Premium*.\nMohon info lengkap & cara ordernya. Terima kasih! 🙏");
+};
+
+/* ============ WA FLOAT ============ */
+document.getElementById("waFloat").addEventListener("click", () => {
+  const wc = store.get("waClicks", 0) + 1;
+  store.set("waClicks", wc);
+  updateStatsPanel();
+});
 
 /* ============ TOAST ============ */
 let toastTimer;
@@ -516,5 +503,4 @@ if (localStorage.getItem("theme") === "light") {
 
 /* ============ INIT ============ */
 initVisitor();
-updateMemberUI();
 render();
