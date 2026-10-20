@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Appskuy — Project Digital untuk Pemilik Usaha & Developer</title>
-<meta name="description" content="Appskuy — Kumpulan project digital untuk pemilik usaha & developer. Daftar member gratis untuk download, upgrade premium untuk fitur penuh. Preview langsung.">
+<meta name="description" content="Appskuy — Kumpulan project digital untuk pemilik usaha & developer. Lihat preview video & gambar, lalu hubungi admin via WhatsApp untuk info lengkap.">
 
-<!-- Favicon inline SVG -->
 <link rel="icon" type="image/svg+xml"
   href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 14 L46 46 H38 L35.2 39 H28.8 L26 46 H18 Z M32 28 L30 34 H34 Z' fill='%23fff'/%3E%3C/svg%3E">
 
@@ -44,9 +43,6 @@
       <a href="#about">Tentang</a>
     </nav>
     <div class="nav-actions">
-      <button class="btn-member" id="openRegister">
-        <span id="memberLabel">👤 Daftar Member</span>
-      </button>
       <button class="btn-icon" id="themeToggle" title="Ganti tema">🌙</button>
     </div>
   </div>
@@ -58,8 +54,8 @@
     <div class="hero-badge">🏪 Untuk Pemilik Usaha & 👨‍💻 Developer</div>
     <h1>Selamat datang di <span class="gradient">Appskuy</span></h1>
     <p>Platform kumpulan project digital untuk <strong>pemilik usaha maupun developer</strong>.
-       <strong>Daftar gratis</strong> untuk download versi dasar, atau upgrade ke premium
-       untuk membuka semua fitur. Preview dulu, baru putuskan.</p>
+       <strong>Lihat preview video & gambar</strong> setiap project, lalu hubungi admin via
+       WhatsApp untuk info lengkap & pembelian.</p>
     <div class="hero-stats">
       <div><strong id="statTotal">0</strong><span>Project</span></div>
       <div><strong id="statFree">0</strong><span>Bisa Gratis</span></div>
@@ -91,14 +87,14 @@
         <span>Online Sekarang</span>
       </div>
       <div class="stat-box">
-        <div class="stat-icon">🧑‍💻</div>
-        <strong id="memberCount">0</strong>
-        <span>Member Terdaftar</span>
+        <div class="stat-icon">👁️</div>
+        <strong id="viewCount">0</strong>
+        <span>Total Preview</span>
       </div>
       <div class="stat-box">
-        <div class="stat-icon">⬇️</div>
-        <strong id="downloadCount">0</strong>
-        <span>Total Download</span>
+        <div class="stat-icon">💬</div>
+        <strong id="waCount">0</strong>
+        <span>Chat via WA</span>
       </div>
     </div>
     <p class="stats-note">*Data demo disimpan di localStorage browser kamu.</p>
@@ -124,26 +120,25 @@
     <p>😕 Tidak ada project yang cocok.</p>
   </div>
 
-  <!-- PAGINATION -->
   <div class="pagination" id="pagination"></div>
 </section>
 
 <!-- PRICING -->
 <section class="container" id="pricing" style="padding:50px 0">
   <h2 class="section-title">Pilih Paketmu</h2>
-  <p class="section-sub">Daftar gratis, upgrade kapan saja.</p>
+  <p class="section-sub">Konsultasi gratis via WhatsApp, upgrade kapan saja.</p>
   <div class="plan-compare">
     <div class="plan-card">
-      <h4>Gratis (Member)</h4>
+      <h4>Versi Gratis</h4>
       <p class="plan-price">Rp 0</p>
       <ul>
-        <li>✅ Wajib daftar email</li>
-        <li>✅ Download semua project versi dasar</li>
-        <li>✅ Fitur terbatas</li>
-        <li>✅ Preview aplikasi</li>
+        <li>✅ Preview video & gambar</li>
+        <li>✅ Versi dasar (fitur terbatas)</li>
+        <li>✅ Konsultasi via WA</li>
+        <li>✅ Cocok untuk coba-coba</li>
         <li>❌ Support prioritas</li>
       </ul>
-      <button class="btn btn-primary full" id="pricingRegister">Daftar Gratis</button>
+      <button class="btn btn-primary full" id="pricingWaFree">💬 Tanya Versi Gratis</button>
     </div>
     <div class="plan-card premium">
       <h4>Premium</h4>
@@ -155,18 +150,22 @@
         <li>✅ Support prioritas 24/7</li>
         <li>✅ Lisensi komersial</li>
       </ul>
-      <a href="#projects" class="btn btn-primary full">Lihat Project Premium</a>
+      <button class="btn btn-primary full" id="pricingWaPremium">💬 Konsultasi Premium</button>
     </div>
   </div>
 </section>
 
-<!-- MODAL PREVIEW -->
+<!-- MODAL PREVIEW (VIDEO / GAMBAR) -->
 <div class="modal-overlay" id="previewModal">
   <div class="modal">
     <button class="modal-close" id="closePreview">✕</button>
-    <div class="preview-frame">
-      <iframe id="previewFrame" title="Preview Aplikasi"></iframe>
-    </div>
+
+    <!-- Media area -->
+    <div class="preview-media" id="previewMedia"></div>
+
+    <!-- Thumbnail strip (jika ada gambar/thumbnail lain) -->
+    <div class="preview-thumbs" id="previewThumbs"></div>
+
     <div class="modal-body">
       <h2 id="previewTitle"></h2>
       <p id="previewDesc"></p>
@@ -175,41 +174,12 @@
   </div>
 </div>
 
-<!-- MODAL PENDAFTARAN MEMBER -->
-<div class="modal-overlay" id="registerModal">
-  <div class="modal small">
-    <button class="modal-close" id="closeRegister">✕</button>
-    <h2>👤 Daftar Member Gratis</h2>
-    <p class="modal-sub">Isi data di bawah untuk download project gratis.</p>
-    <input type="text" id="regName" placeholder="Nama lengkap" autocomplete="name">
-    <input type="email" id="regEmail" placeholder="Email aktif" autocomplete="email">
-    <button class="btn btn-primary full" id="regSubmit">Daftar & Lanjut Download</button>
-    <p class="pay-note">*Data hanya disimpan di browser kamu (demo).</p>
-  </div>
-</div>
-
-<!-- MODAL PEMBAYARAN -->
-<div class="modal-overlay" id="payModal">
-  <div class="modal small">
-    <button class="modal-close" id="closePay">✕</button>
-    <h2>💳 Pembayaran Premium</h2>
-    <p id="payProjectName" class="pay-name"></p>
-    <div class="pay-box">
-      <div class="pay-row"><span>Harga</span><strong id="payPrice"></strong></div>
-      <div class="pay-row"><span>Metode</span><strong>Transfer / QRIS</strong></div>
-    </div>
-    <input type="text" id="payEmail" placeholder="Email untuk link download">
-    <button class="btn btn-primary full" id="payConfirm">Bayar Sekarang</button>
-    <p class="pay-note">*Demo simulasi. Integrasikan dengan Midtrans/Xendit untuk produksi.</p>
-  </div>
-</div>
-
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <!-- TOMBOL WA MELAYANG -->
-<a href="https://wa.me/6281234567890?text=Halo%20Admin%20Appskuy%2C%20saya%20ingin%20bertanya%20tentang%20project."
-   class="wa-float" target="_blank" rel="noopener" title="Hubungi Admin via WhatsApp">
+<a href="https://wa.me/6281234567890?text=Halo%20Admin%20Appskuy%2C%20saya%20mau%20tanya%20tentang%20project."
+   class="wa-float" id="waFloat" target="_blank" rel="noopener" title="Hubungi Admin via WhatsApp">
   <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
     <path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7 1 3.7 1.6 5.7 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9.9.9-4.8-.3-.4c-1-1.6-1.4-3.4-1.4-5.1 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.1s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/>
   </svg>
@@ -230,7 +200,7 @@
       <strong>Appskuy</strong>
     </div>
     <p class="footer-desc">Platform kumpulan project digital untuk pemilik usaha & developer.<br>
-       Daftar gratis, upgrade kapan saja.</p>
+       Preview dulu, konsultasi gratis via WhatsApp.</p>
     <p>© 2025 Appskuy. Dibuat dengan ❤️ untuk developer Indonesia.</p>
   </div>
 </footer>
