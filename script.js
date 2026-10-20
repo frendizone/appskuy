@@ -1,155 +1,226 @@
-/* ============ KONFIGURASI WA ============ */
-const WA_ADMIN = "6281234567890"; // 🔧 GANTI dengan nomor WA admin asli
+/* ============ KONFIGURASI ============ */
+const WA_ADMIN = "6281234567890"; // 🔧 GANTI nomor WA admin asli
+const IMG_BASE = "img/projects/"; // folder gambar project
+const IMG_EXT  = ".jpg";          // ganti ".webp" jika pakai WebP
+const PLACEHOLDER = "img/projects/placeholder.jpg";
+
+/* ============ HELPER: PATH GAMBAR OTOMATIS ============ */
+function getThumb(p) {
+  return `${IMG_BASE}${p.id}-thumb${IMG_EXT}`;
+}
+function getGallery(p) {
+  const count = p.galleryCount || 0;
+  const arr = [];
+  for (let i = 1; i <= count; i++) {
+    arr.push(`${IMG_BASE}${p.id}-${i}${IMG_EXT}`);
+  }
+  return arr.length ? arr : [getThumb(p)];
+}
 
 /* ============ DATA PROJECT ============ */
+/* 🖼️ CARA GANTI GAMBAR:
+   1. Thumbnail  → timpa file img/projects/{id}-thumb.jpg (600×400 px)
+   2. Gallery    → timpa img/projects/{id}-1.jpg, {id}-2.jpg, dst (1280×720 px)
+   3. Jumlah gallery → ubah angka galleryCount di bawah
+   Tidak perlu edit path gambar secara manual.
+*/
 const PROJECTS = [
   {
-    id: 1, title: "Landing Page UMKM Kopi",
-    desc: "Template landing page modern untuk kedai kopi, responsive, dengan animasi scroll.",
-    category: "Web", subcategory: "Landing Page", emoji: "☕",
-    thumbnail: "https://picsum.photos/seed/kopi/600/400",
+    id: 1, title: "Aplikasi Kasir (POS) Sederhana",
+    desc: "Kasir digital untuk warung & kafe: transaksi cepat, struk WA, laporan harian.",
+    category: "Web", subcategory: "POS", emoji: "💳",
+    galleryCount: 3,
     videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/kopi1/1280/720",
-      "https://picsum.photos/seed/kopi2/1280/720",
-      "https://picsum.photos/seed/kopi3/1280/720"
-    ],
     plans: {
-      free:    { price: 0,      features: ["✅ 1 halaman", "✅ Responsive", "✅ Dark mode", "❌ Multi-halaman", "❌ Form kontak", "❌ SEO optimization"] },
-      premium: { price: 100000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Form kontak", "✅ SEO optimization", "✅ Integrasi WhatsApp", "✅ Support prioritas"] }
+      free:    { price: 0,      features: ["✅ 1 kasir / 1 device", "✅ Transaksi dasar", "✅ Struk digital via WA", "❌ Multi-outlet", "❌ Barcode scanner", "❌ Laporan penjualan"] },
+      premium: { price: 250000, features: ["✅ Unlimited kasir & device", "✅ Semua fitur gratis", "✅ Multi-outlet", "✅ Barcode scanner", "✅ Laporan + export Excel", "✅ Support prioritas"] }
     }
   },
   {
-    id: 2, title: "Company Profile Agency",
+    id: 2, title: "Website Toko Online",
+    desc: "Katalog produk + checkout WhatsApp untuk UMKM. Siap jualan online tanpa coding.",
+    category: "Web", subcategory: "E-Commerce", emoji: "🛍️",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ Maks 20 produk", "✅ Katalog produk", "✅ Checkout via WhatsApp", "❌ Payment gateway", "❌ Multi-vendor", "❌ Laporan penjualan"] },
+      premium: { price: 250000, features: ["✅ Unlimited produk", "✅ Semua fitur gratis", "✅ Payment gateway (Midtrans)", "✅ Multi-vendor", "✅ Laporan penjualan", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 3, title: "Landing Page UMKM",
+    desc: "Landing page 1 halaman untuk kedai kopi, restoran, laundry, salon. Fokus konversi WA.",
+    category: "Web", subcategory: "Landing Page", emoji: "☕",
+    galleryCount: 3,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ 1 halaman (hero + about + kontak)", "✅ Responsive mobile", "✅ Tombol WhatsApp", "❌ Galeri foto", "❌ Multi-bahasa", "❌ SEO optimization"] },
+      premium: { price: 100000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Galeri foto", "✅ Multi-bahasa (ID/EN)", "✅ SEO optimization", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 4, title: "Company Profile Agency",
     desc: "Website company profile profesional untuk agency/konsultan, dengan halaman tim & portfolio.",
     category: "Web", subcategory: "Company Profile", emoji: "🏢",
-    thumbnail: "https://picsum.photos/seed/agency/600/400",
+    galleryCount: 2,
     videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/agency1/1280/720",
-      "https://picsum.photos/seed/agency2/1280/720"
-    ],
     plans: {
-      free:    { price: 0,      features: ["✅ 3 halaman", "✅ Responsive", "✅ Halaman tim", "❌ Blog", "❌ Multi-bahasa", "❌ SEO optimization"] },
-      premium: { price: 200000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Blog", "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"] }
+      free:    { price: 0,      features: ["✅ 3 halaman (home, about, kontak)", "✅ Responsive", "✅ Halaman tim", "❌ Blog", "❌ Multi-bahasa", "❌ SEO optimization"] },
+      premium: { price: 200000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Blog + kategori", "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"] }
     }
   },
   {
-    id: 3, title: "E-Commerce Dashboard",
+    id: 5, title: "Dashboard Admin E-Commerce",
     desc: "Dashboard admin toko online dengan chart penjualan, manajemen produk, dan laporan real-time.",
     category: "Web", subcategory: "Dashboard", emoji: "🛒",
-    thumbnail: "https://picsum.photos/seed/dash/600/400",
+    galleryCount: 2,
     videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/dash1/1280/720",
-      "https://picsum.photos/seed/dash2/1280/720"
-    ],
     plans: {
       free:    { price: 0,      features: ["✅ 1 toko / 1 user", "✅ Manajemen produk dasar", "✅ Laporan harian", "❌ Multi-outlet", "❌ Export Excel/PDF", "❌ Support prioritas"] },
       premium: { price: 150000, features: ["✅ Unlimited toko & user", "✅ Semua fitur gratis", "✅ Multi-outlet", "✅ Export Excel/PDF", "✅ Support prioritas 24/7", "✅ Update gratis"] }
     }
   },
   {
-    id: 4, title: "Toko Online Sederhana",
-    desc: "Website e-commerce siap pakai untuk UMKM: katalog produk, keranjang, checkout WhatsApp.",
-    category: "Web", subcategory: "E-Commerce", emoji: "🛍️",
-    thumbnail: "https://picsum.photos/seed/toko/600/400",
-    videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/toko1/1280/720",
-      "https://picsum.photos/seed/toko2/1280/720"
-    ],
-    plans: {
-      free:    { price: 0,      features: ["✅ Maks 20 produk", "✅ Katalog produk", "✅ Checkout WhatsApp", "❌ Payment gateway", "❌ Multi-vendor", "❌ Laporan penjualan"] },
-      premium: { price: 250000, features: ["✅ Unlimited produk", "✅ Semua fitur gratis", "✅ Payment gateway", "✅ Multi-vendor", "✅ Laporan penjualan", "✅ Support prioritas"] }
-    }
-  },
-  {
-    id: 5, title: "Aplikasi Kasir (POS)",
-    desc: "Point of Sale lengkap: scan barcode, struk digital, multi-outlet, dan laporan harian.",
-    category: "Desktop", subcategory: "POS", emoji: "💳",
-    thumbnail: "https://picsum.photos/seed/pos/600/400",
-    videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/pos1/1280/720",
-      "https://picsum.photos/seed/pos2/1280/720"
-    ],
-    plans: {
-      free:    { price: 0,      features: ["✅ 1 kasir / 1 device", "✅ Transaksi dasar", "✅ Struk digital", "❌ Multi-outlet", "❌ Barcode scanner", "❌ Laporan lanjutan"] },
-      premium: { price: 250000, features: ["✅ Unlimited kasir & device", "✅ Semua fitur gratis", "✅ Multi-outlet", "✅ Barcode scanner", "✅ Laporan lanjutan + export", "✅ Support prioritas"] }
-    }
-  },
-  {
-    id: 6, title: "Aplikasi Absensi QR",
-    desc: "Absensi karyawan via QR code, rekap otomatis, export Excel, dan geofencing.",
-    category: "Mobile", subcategory: "Absensi", emoji: "📱",
-    thumbnail: "https://picsum.photos/seed/absensi/600/400",
-    videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/absensi1/1280/720",
-      "https://picsum.photos/seed/absensi2/1280/720"
-    ],
-    plans: {
-      free:    { price: 0,      features: ["✅ Maks 10 karyawan", "✅ Absensi QR dasar", "✅ Rekap harian", "❌ Geofencing", "❌ Export Excel", "❌ Multi-cabang"] },
-      premium: { price: 300000, features: ["✅ Unlimited karyawan", "✅ Semua fitur gratis", "✅ Geofencing", "✅ Export Excel & PDF", "✅ Multi-cabang", "✅ Support prioritas"] }
-    }
-  },
-  {
-    id: 7, title: "Portfolio Generator",
-    desc: "Buat website portofolio otomatis dari input JSON. Support custom domain dan tema.",
-    category: "Website", subcategory: "Portfolio", emoji: "🎨",
-    thumbnail: "https://picsum.photos/seed/portfolio/600/400",
-    videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/portfolio1/1280/720"
-    ],
-    plans: {
-      free:    { price: 0,     features: ["✅ 1 template", "✅ Subdomain appskuy", "✅ Auto-generate dari JSON", "❌ Custom domain", "❌ Semua template", "❌ Analytics"] },
-      premium: { price: 75000, features: ["✅ Semua template", "✅ Custom domain", "✅ Analytics", "✅ Tanpa watermark", "✅ Update gratis", "✅ Support prioritas"] }
-    }
-  },
-  {
-    id: 8, title: "Sistem Manajemen Sekolah",
+    id: 6, title: "Sistem Manajemen Sekolah (SIAKAD)",
     desc: "SIAKAD lengkap: siswa, guru, jadwal, nilai, pembayaran SPP, dan portal orang tua.",
     category: "Web", subcategory: "Dashboard", emoji: "🏫",
-    thumbnail: "https://picsum.photos/seed/sekolah/600/400",
+    galleryCount: 2,
     videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/sekolah1/1280/720",
-      "https://picsum.photos/seed/sekolah2/1280/720"
-    ],
     plans: {
       free:    { price: 0,      features: ["✅ Maks 50 siswa", "✅ Data siswa & guru", "✅ Jadwal dasar", "❌ Modul SPP", "❌ Portal orang tua", "❌ Multi-tahun ajaran"] },
       premium: { price: 450000, features: ["✅ Unlimited siswa", "✅ Semua fitur gratis", "✅ Modul SPP lengkap", "✅ Portal orang tua", "✅ Multi-tahun ajaran", "✅ Support prioritas"] }
     }
   },
   {
-    id: 9, title: "Landing Page Restoran",
-    desc: "Landing page restoran dengan menu digital, galeri, dan tombol reservasi WhatsApp.",
-    category: "Web", subcategory: "Landing Page", emoji: "🍜",
-    thumbnail: "https://picsum.photos/seed/resto/600/400",
+    id: 7, title: "Aplikasi Absensi Karyawan (Web)",
+    desc: "Absensi karyawan: klik tombol, rekap harian, export Excel, dan geofencing.",
+    category: "Web", subcategory: "Absensi", emoji: "🕒",
+    galleryCount: 2,
     videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/resto1/1280/720",
-      "https://picsum.photos/seed/resto2/1280/720"
-    ],
     plans: {
-      free:    { price: 0,      features: ["✅ 1 halaman", "✅ Menu digital", "✅ Tombol reservasi WA", "❌ Galeri foto", "❌ Multi-bahasa", "❌ SEO optimization"] },
-      premium: { price: 120000, features: ["✅ Unlimited halaman", "✅ Semua fitur gratis", "✅ Galeri foto", "✅ Multi-bahasa", "✅ SEO optimization", "✅ Support prioritas"] }
+      free:    { price: 0,      features: ["✅ Maks 10 karyawan", "✅ Absensi manual", "✅ Rekap harian", "❌ Geofencing", "❌ Export Excel", "❌ Multi-cabang"] },
+      premium: { price: 300000, features: ["✅ Unlimited karyawan", "✅ Semua fitur gratis", "✅ Geofencing GPS", "✅ Export Excel & PDF", "✅ Multi-cabang", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 8, title: "Portfolio Generator",
+    desc: "Buat website portofolio otomatis dari input JSON. Support custom domain dan tema.",
+    category: "Website", subcategory: "Portfolio", emoji: "🎨",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,     features: ["✅ 1 template", "✅ Subdomain appskuy", "✅ Auto-generate dari JSON", "❌ Custom domain", "❌ Semua template", "❌ Analytics"] },
+      premium: { price: 75000, features: ["✅ Semua template (10+)", "✅ Custom domain", "✅ Analytics pengunjung", "✅ Tanpa watermark", "✅ Update gratis", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 9, title: "Sistem Reservasi Restoran",
+    desc: "Form reservasi online + notifikasi WA ke admin. Cocok untuk resto & kafe.",
+    category: "Web", subcategory: "Reservasi", emoji: "🍽️",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ Maks 20 reservasi/bulan", "✅ Form reservasi", "✅ Notifikasi WA admin", "❌ Kalender visual", "❌ Multi-meja", "❌ Pembayaran DP"] },
+      premium: { price: 180000, features: ["✅ Unlimited reservasi", "✅ Semua fitur gratis", "✅ Kalender visual", "✅ Multi-meja & cabang", "✅ Pembayaran DP online", "✅ Support prioritas"] }
     }
   },
   {
     id: 10, title: "Aplikasi Laundry",
-    desc: "Aplikasi manajemen laundry: input order, tracking status, notifikasi WA ke pelanggan.",
-    category: "Mobile", subcategory: "Kasir", emoji: "🧺",
-    thumbnail: "https://picsum.photos/seed/laundry/600/400",
+    desc: "Manajemen laundry: input order, tracking status, notifikasi WA ke pelanggan.",
+    category: "Web", subcategory: "Laundry", emoji: "🧺",
+    galleryCount: 2,
     videoUrl: "",
-    gallery: [
-      "https://picsum.photos/seed/laundry1/1280/720"
-    ],
     plans: {
-      free:    { price: 0,      features: ["✅ Maks 30 order/bulan", "✅ Input order", "✅ Tracking status", "❌ Notifikasi WA", "❌ Multi-outlet", "❌ Laporan keuangan"] },
-      premium: { price: 200000, features: ["✅ Unlimited order", "✅ Semua fitur gratis", "✅ Notifikasi WA", "✅ Multi-outlet", "✅ Laporan keuangan", "✅ Support prioritas"] }
+      free:    { price: 0,      features: ["✅ Maks 30 order/bulan", "✅ Input order", "✅ Tracking status", "❌ Notifikasi WA otomatis", "❌ Multi-outlet", "❌ Laporan keuangan"] },
+      premium: { price: 200000, features: ["✅ Unlimited order", "✅ Semua fitur gratis", "✅ Notifikasi WA otomatis", "✅ Multi-outlet", "✅ Laporan keuangan", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 11, title: "Aplikasi Absensi QR",
+    desc: "Absensi via scan QR code. Rekap otomatis, export Excel, dan geofencing.",
+    category: "Mobile", subcategory: "Absensi", emoji: "📱",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ Maks 10 karyawan", "✅ Scan QR untuk absen", "✅ Rekap harian", "❌ Geofencing", "❌ Export Excel", "❌ Multi-cabang"] },
+      premium: { price: 300000, features: ["✅ Unlimited karyawan", "✅ Semua fitur gratis", "✅ Geofencing GPS", "✅ Export Excel & PDF", "✅ Multi-cabang", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 12, title: "Kasir Mobile (POS HP)",
+    desc: "Kasir di HP untuk pedagang keliling, food truck, dan bazaar.",
+    category: "Mobile", subcategory: "POS", emoji: "📲",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ 1 device", "✅ Transaksi dasar", "✅ Struk digital via WA", "❌ Cetak thermal", "❌ Multi-device", "❌ Laporan"] },
+      premium: { price: 200000, features: ["✅ Unlimited device", "✅ Semua fitur gratis", "✅ Cetak thermal Bluetooth", "✅ Sinkronisasi multi-device", "✅ Laporan lengkap", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 13, title: "Katalog Produk Digital",
+    desc: "Katalog produk untuk reseller & dropshipper. Tanpa checkout, fokus chat WA.",
+    category: "Mobile", subcategory: "Katalog", emoji: "📒",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ Maks 15 produk", "✅ Grid produk + harga", "✅ Tombol chat WA", "❌ Kategori produk", "❌ Pencarian", "❌ Multi-bahasa"] },
+      premium: { price: 120000, features: ["✅ Unlimited produk", "✅ Semua fitur gratis", "✅ Kategori & pencarian", "✅ Multi-bahasa", "✅ Tanpa watermark", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 14, title: "Booking Salon / Klinik",
+    desc: "Booking online untuk salon, klinik, barbershop, dan spa.",
+    category: "Mobile", subcategory: "Booking", emoji: "💅",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ Maks 20 booking/bulan", "✅ Form booking", "✅ Notifikasi WA admin", "❌ Pilih terapis/dokter", "❌ Pembayaran DP", "❌ Reminder otomatis"] },
+      premium: { price: 200000, features: ["✅ Unlimited booking", "✅ Semua fitur gratis", "✅ Pilih terapis/dokter", "✅ Pembayaran DP online", "✅ Reminder WA otomatis", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 15, title: "Tabungan / Kas Kelas",
+    desc: "Catat setoran & penarikan kas kelas, RT/RW, atau komunitas.",
+    category: "Mobile", subcategory: "Kas", emoji: "💰",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,     features: ["✅ Maks 20 anggota", "✅ Catat setoran & penarikan", "✅ Saldo otomatis", "❌ Laporan bulanan", "❌ Export Excel", "❌ Multi-kas"] },
+      premium: { price: 80000, features: ["✅ Unlimited anggota", "✅ Semua fitur gratis", "✅ Laporan bulanan", "✅ Export Excel", "✅ Multi-kas", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 16, title: "Aplikasi Kasir Desktop (Offline)",
+    desc: "Kasir offline untuk toko dengan internet tidak stabil.",
+    category: "Desktop", subcategory: "POS", emoji: "🖥️",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ 1 kasir", "✅ Transaksi offline", "✅ Struk cetak", "❌ Sinkronisasi cloud", "❌ Multi-outlet", "❌ Backup otomatis"] },
+      premium: { price: 300000, features: ["✅ Multi-kasir", "✅ Semua fitur gratis", "✅ Sinkronisasi cloud", "✅ Multi-outlet", "✅ Backup otomatis", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 17, title: "Manajemen Stok Gudang",
+    desc: "Kelola stok masuk/keluar, peringatan stok rendah, dan multi-gudang.",
+    category: "Desktop", subcategory: "Inventori", emoji: "📦",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ Maks 50 SKU", "✅ Stok masuk/keluar", "✅ Peringatan stok rendah", "❌ Barcode", "❌ Multi-gudang", "❌ Laporan"] },
+      premium: { price: 250000, features: ["✅ Unlimited SKU", "✅ Semua fitur gratis", "✅ Barcode scanner", "✅ Multi-gudang", "✅ Laporan lengkap", "✅ Support prioritas"] }
+    }
+  },
+  {
+    id: 18, title: "Invoice / Nota Digital",
+    desc: "Buat invoice profesional untuk freelancer & toko jasa. Export PDF.",
+    category: "Desktop", subcategory: "Invoice", emoji: "🧾",
+    galleryCount: 2,
+    videoUrl: "",
+    plans: {
+      free:    { price: 0,      features: ["✅ 5 invoice/bulan", "✅ Template invoice dasar", "✅ Export PDF (watermark)", "❌ Logo custom", "❌ Multi-klien", "❌ Recurring invoice"] },
+      premium: { price: 100000, features: ["✅ Unlimited invoice", "✅ Semua fitur gratis", "✅ Semua template", "✅ Logo custom", "✅ Recurring invoice", "✅ Support prioritas"] }
     }
   }
 ];
@@ -220,7 +291,8 @@ function render() {
     const hasVideo = !!p.videoUrl;
     card.innerHTML = `
       <div class="card-thumb" data-action="preview" data-id="${p.id}">
-        <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
+        <img src="${getThumb(p)}" alt="${p.title} — ${p.category} ${p.subcategory}"
+             loading="lazy" onerror="this.src='${PLACEHOLDER}'">
         <span class="card-badge badge-free">GRATIS</span>
         ${premiumPrice > 0 ? `<span class="card-badge badge-paid badge-second">PREMIUM</span>` : ''}
         <div class="play-badge">
@@ -324,8 +396,8 @@ function openPreview(p) {
   currentPreview.project = p;
 
   const mediaList = [];
-  if (p.videoUrl) mediaList.push({ type: "video", src: p.videoUrl, thumb: p.thumbnail });
-  const gallery = (p.gallery && p.gallery.length) ? p.gallery : [p.thumbnail];
+  if (p.videoUrl) mediaList.push({ type: "video", src: p.videoUrl, thumb: getThumb(p) });
+  const gallery = getGallery(p);
   gallery.forEach(src => mediaList.push({ type: "image", src, thumb: src }));
 
   currentPreview.mediaList = mediaList;
@@ -360,7 +432,7 @@ function renderPreviewMedia() {
       `;
     }
   } else {
-    previewMedia.innerHTML = `<img src="${item.src}" alt="Preview">`;
+    previewMedia.innerHTML = `<img src="${item.src}" alt="Preview" onerror="this.src='${PLACEHOLDER}'">`;
   }
 }
 
@@ -368,7 +440,7 @@ function renderPreviewThumbs() {
   if (currentPreview.mediaList.length <= 1) { previewThumbs.innerHTML = ""; return; }
   previewThumbs.innerHTML = currentPreview.mediaList.map((m, i) => `
     <div class="thumb ${i === currentPreview.mediaIndex ? "active" : ""}" data-index="${i}">
-      <img src="${m.thumb}" alt="thumb ${i+1}">
+      <img src="${m.thumb}" alt="thumb ${i+1}" onerror="this.src='${PLACEHOLDER}'">
     </div>
   `).join("");
 }
