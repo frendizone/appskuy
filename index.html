@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appskuy — Project Digital untuk UMKM & Developer</title>
+<meta name="description" content="Appskuy — Kumpulan project digital untuk UMKM & developer. Download gratis dengan fitur dasar, upgrade ke premium untuk fitur penuh. Preview langsung, arsip rapi.">
+
+<!-- Favicon inline SVG -->
+<link rel="icon" type="image/svg+xml"
+  href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 14 L46 46 H38 L35.2 39 H28.8 L26 46 H18 Z M32 28 L30 34 H34 Z' fill='%23fff'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a78bfa"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#lg)"/>
+        <path d="M32 14 L46 46 H38 L35.2 39 H28.8 L26 46 H18 Z M32 28 L30 34 H34 Z"
+              fill="#fff" opacity="0.95"/>
+        <circle cx="46" cy="18" r="4" fill="url(#lg2)" stroke="#fff" stroke-width="1.5"/>
+      </svg>
+      <span class="logo-text">App<em>skuy</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#projects" class="active">Projects</a>
+      <a href="#pricing">Paket</a>
+      <a href="#archive">Arsip</a>
+      <a href="#about">Tentang</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeToggle" title="Ganti tema">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">🏪 Untuk UMKM & 👨‍💻 Developer</div>
+    <h1>Selamat datang di <span class="gradient">Appskuy</span></h1>
+    <p>Platform kumpulan project digital untuk <strong>UMKM maupun developer</strong>.
+       <strong>Download gratis dengan fitur dasar</strong>, atau upgrade ke versi premium
+       untuk membuka semua fitur. Preview dulu, baru putuskan.</p>
+    <div class="hero-stats">
+      <div><strong id="statTotal">0</strong><span>Project</span></div>
+      <div><strong id="statFree">0</strong><span>Bisa Gratis</span></div>
+      <div><strong id="statPaid">0</strong><span>Ada Premium</span></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">Jelajahi Project</a>
+      <a href="#pricing" class="btn">Lihat Paket</a>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER & SEARCH -->
+<section class="container" id="projects">
+  <div class="toolbar">
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" id="searchInput" placeholder="Cari project...">
+    </div>
+    <div class="filters" id="filters">
+      <button class="chip active" data-filter="all">Semua</button>
+      <button class="chip" data-filter="free">Bisa Gratis</button>
+      <button class="chip" data-filter="premium">Ada Premium</button>
+      <button class="chip" data-filter="archived">Arsip</button>
+    </div>
+  </div>
+
+  <div class="grid" id="projectGrid"></div>
+  <div class="empty" id="emptyState" style="display:none">
+    <p>😕 Tidak ada project yang cocok.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="container" id="pricing" style="padding:50px 0">
+  <h2 class="section-title">Pilih Paketmu</h2>
+  <p class="section-sub">Mulai gratis, upgrade kapan saja.</p>
+  <div class="plan-compare">
+    <div class="plan-card">
+      <h4>Gratis</h4>
+      <p class="plan-price">Rp 0</p>
+      <ul>
+        <li>✅ Semua project versi dasar</li>
+        <li>✅ Fitur terbatas</li>
+        <li>✅ Preview aplikasi</li>
+        <li>✅ Arsip pribadi</li>
+        <li>❌ Support prioritas</li>
+      </ul>
+      <a href="#projects" class="btn btn-primary full">Mulai Gratis</a>
+    </div>
+    <div class="plan-card premium">
+      <h4>Premium</h4>
+      <p class="plan-price">Mulai Rp 150.000</p>
+      <ul>
+        <li>✅ Semua fitur versi gratis</li>
+        <li>✅ Fitur penuh tanpa batas</li>
+        <li>✅ Update gratis selamanya</li>
+        <li>✅ Support prioritas 24/7</li>
+        <li>✅ Lisensi komersial</li>
+      </ul>
+      <a href="#projects" class="btn btn-primary full">Lihat Project Premium</a>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL PREVIEW -->
+<div class="modal-overlay" id="previewModal">
+  <div class="modal">
+    <button class="modal-close" id="closePreview">✕</button>
+    <div class="preview-frame">
+      <iframe id="previewFrame" title="Preview Aplikasi"></iframe>
+    </div>
+    <div class="modal-body">
+      <h2 id="previewTitle"></h2>
+      <p id="previewDesc"></p>
+      <div id="previewActions"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PEMBAYARAN -->
+<div class="modal-overlay" id="payModal">
+  <div class="modal small">
+    <button class="modal-close" id="closePay">✕</button>
+    <h2>💳 Pembayaran Premium</h2>
+    <p id="payProjectName" class="pay-name"></p>
+    <div class="pay-box">
+      <div class="pay-row"><span>Harga</span><strong id="payPrice"></strong></div>
+      <div class="pay-row"><span>Metode</span><strong>Transfer / QRIS</strong></div>
+    </div>
+    <input type="text" id="payEmail" placeholder="Email untuk link download">
+    <button class="btn btn-primary full" id="payConfirm">Bayar Sekarang</button>
+    <p class="pay-note">*Demo simulasi. Integrasikan dengan Midtrans/Xendit untuk produksi.</p>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+<footer class="footer" id="about">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg viewBox="0 0 64 64" width="28" height="28">
+        <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/>
+        </linearGradient></defs>
+        <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#fg)"/>
+        <path d="M32 14 L46 46 H38 L35.2 39 H28.8 L26 46 H18 Z M32 28 L30 34 H34 Z" fill="#fff"/>
+      </svg>
+      <strong>Appskuy</strong>
+    </div>
+    <p class="footer-desc">Platform kumpulan project digital untuk UMKM & developer.<br>
+       Mulai gratis, upgrade kapan saja.</p>
+    <p>© 2025 Appskuy. Dibuat dengan ❤️ untuk developer Indonesia.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
