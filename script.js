@@ -2,23 +2,17 @@
 const WA_ADMIN = "6281234567890"; // 🔧 GANTI dengan nomor WA admin asli
 
 /* ============ DATA PROJECT ============ */
-/* Setiap project punya:
-   - thumbnail: gambar utama (URL)
-   - videoUrl : (opsional) video preview (URL mp4 / YouTube embed)
-   - gallery  : array gambar tambahan (opsional)
-   - plans.free / plans.premium
-*/
 const PROJECTS = [
   {
     id: 1, title: "Landing Page UMKM Kopi",
     desc: "Template landing page modern untuk kedai kopi, responsive, dengan animasi scroll.",
     category: "Web", subcategory: "Landing Page", emoji: "☕",
     thumbnail: "https://picsum.photos/seed/kopi/600/400",
-    videoUrl: "", // isi URL mp4 untuk video preview
+    videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/kopi1/600/400",
-      "https://picsum.photos/seed/kopi2/600/400",
-      "https://picsum.photos/seed/kopi3/600/400"
+      "https://picsum.photos/seed/kopi1/1280/720",
+      "https://picsum.photos/seed/kopi2/1280/720",
+      "https://picsum.photos/seed/kopi3/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ 1 halaman", "✅ Responsive", "✅ Dark mode", "❌ Multi-halaman", "❌ Form kontak", "❌ SEO optimization"] },
@@ -32,8 +26,8 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/agency/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/agency1/600/400",
-      "https://picsum.photos/seed/agency2/600/400"
+      "https://picsum.photos/seed/agency1/1280/720",
+      "https://picsum.photos/seed/agency2/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ 3 halaman", "✅ Responsive", "✅ Halaman tim", "❌ Blog", "❌ Multi-bahasa", "❌ SEO optimization"] },
@@ -47,8 +41,8 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/dash/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/dash1/600/400",
-      "https://picsum.photos/seed/dash2/600/400"
+      "https://picsum.photos/seed/dash1/1280/720",
+      "https://picsum.photos/seed/dash2/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ 1 toko / 1 user", "✅ Manajemen produk dasar", "✅ Laporan harian", "❌ Multi-outlet", "❌ Export Excel/PDF", "❌ Support prioritas"] },
@@ -62,8 +56,8 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/toko/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/toko1/600/400",
-      "https://picsum.photos/seed/toko2/600/400"
+      "https://picsum.photos/seed/toko1/1280/720",
+      "https://picsum.photos/seed/toko2/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ Maks 20 produk", "✅ Katalog produk", "✅ Checkout WhatsApp", "❌ Payment gateway", "❌ Multi-vendor", "❌ Laporan penjualan"] },
@@ -77,8 +71,8 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/pos/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/pos1/600/400",
-      "https://picsum.photos/seed/pos2/600/400"
+      "https://picsum.photos/seed/pos1/1280/720",
+      "https://picsum.photos/seed/pos2/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ 1 kasir / 1 device", "✅ Transaksi dasar", "✅ Struk digital", "❌ Multi-outlet", "❌ Barcode scanner", "❌ Laporan lanjutan"] },
@@ -92,8 +86,8 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/absensi/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/absensi1/600/400",
-      "https://picsum.photos/seed/absensi2/600/400"
+      "https://picsum.photos/seed/absensi1/1280/720",
+      "https://picsum.photos/seed/absensi2/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ Maks 10 karyawan", "✅ Absensi QR dasar", "✅ Rekap harian", "❌ Geofencing", "❌ Export Excel", "❌ Multi-cabang"] },
@@ -107,7 +101,7 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/portfolio/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/portfolio1/600/400"
+      "https://picsum.photos/seed/portfolio1/1280/720"
     ],
     plans: {
       free:    { price: 0,     features: ["✅ 1 template", "✅ Subdomain appskuy", "✅ Auto-generate dari JSON", "❌ Custom domain", "❌ Semua template", "❌ Analytics"] },
@@ -121,8 +115,8 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/sekolah/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/sekolah1/600/400",
-      "https://picsum.photos/seed/sekolah2/600/400"
+      "https://picsum.photos/seed/sekolah1/1280/720",
+      "https://picsum.photos/seed/sekolah2/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ Maks 50 siswa", "✅ Data siswa & guru", "✅ Jadwal dasar", "❌ Modul SPP", "❌ Portal orang tua", "❌ Multi-tahun ajaran"] },
@@ -136,8 +130,8 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/resto/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/resto1/600/400",
-      "https://picsum.photos/seed/resto2/600/400"
+      "https://picsum.photos/seed/resto1/1280/720",
+      "https://picsum.photos/seed/resto2/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ 1 halaman", "✅ Menu digital", "✅ Tombol reservasi WA", "❌ Galeri foto", "❌ Multi-bahasa", "❌ SEO optimization"] },
@@ -151,7 +145,7 @@ const PROJECTS = [
     thumbnail: "https://picsum.photos/seed/laundry/600/400",
     videoUrl: "",
     gallery: [
-      "https://picsum.photos/seed/laundry1/600/400"
+      "https://picsum.photos/seed/laundry1/1280/720"
     ],
     plans: {
       free:    { price: 0,      features: ["✅ Maks 30 order/bulan", "✅ Input order", "✅ Tracking status", "❌ Notifikasi WA", "❌ Multi-outlet", "❌ Laporan keuangan"] },
@@ -177,46 +171,10 @@ const filters = document.getElementById("filters");
 const toast = document.getElementById("toast");
 const pagination = document.getElementById("pagination");
 
-/* ============ STORAGE ============ */
-const store = {
-  get(key, def) {
-    try { const v = localStorage.getItem("appskuy_" + key); return v ? JSON.parse(v) : def; }
-    catch { return def; }
-  },
-  set(key, val) { localStorage.setItem("appskuy_" + key, JSON.stringify(val)); }
-};
-
-/* ============ VISITOR TRACKING ============ */
-function initVisitor() {
-  if (!sessionStorage.getItem("appskuy_session")) {
-    const visits = store.get("visits", 0) + 1;
-    store.set("visits", visits);
-    sessionStorage.setItem("appskuy_session", "1");
-  }
-  updateOnline();
-  setInterval(updateOnline, 8000);
-  updateStatsPanel();
-}
-
-function updateOnline() {
-  const online = Math.floor(Math.random() * 20) + 5;
-  document.getElementById("onlineCount").textContent = online;
-}
-
-function updateStatsPanel() {
-  document.getElementById("visitCount").textContent = store.get("visits", 0).toLocaleString("id-ID");
-  document.getElementById("viewCount").textContent = store.get("views", 0).toLocaleString("id-ID");
-  document.getElementById("waCount").textContent = store.get("waClicks", 0).toLocaleString("id-ID");
-}
-
 /* ============ WA HELPERS ============ */
 function openWA(message) {
   const url = `https://wa.me/${WA_ADMIN}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
-  // Increment counter WA click
-  const wc = store.get("waClicks", 0) + 1;
-  store.set("waClicks", wc);
-  updateStatsPanel();
 }
 
 function waAsk(project, plan) {
@@ -365,7 +323,6 @@ let currentPreview = { project: null, mediaList: [], mediaIndex: 0 };
 function openPreview(p) {
   currentPreview.project = p;
 
-  // Susun daftar media: video (jika ada) + gallery (atau thumbnail saja)
   const mediaList = [];
   if (p.videoUrl) mediaList.push({ type: "video", src: p.videoUrl, thumb: p.thumbnail });
   const gallery = (p.gallery && p.gallery.length) ? p.gallery : [p.thumbnail];
@@ -383,11 +340,6 @@ function openPreview(p) {
 
   previewModal.classList.add("show");
   document.body.style.overflow = "hidden";
-
-  // Increment view counter
-  const v = store.get("views", 0) + 1;
-  store.set("views", v);
-  updateStatsPanel();
 }
 
 function renderPreviewMedia() {
@@ -395,17 +347,16 @@ function renderPreviewMedia() {
   if (!item) { previewMedia.innerHTML = ""; return; }
 
   if (item.type === "video") {
-    // Cek apakah URL YouTube
     const ytMatch = item.src.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
     if (ytMatch) {
       previewMedia.innerHTML = `
         <iframe src="https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1"
                 frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen style="width:100%;height:100%;border:none;background:#000"></iframe>
+                allowfullscreen></iframe>
       `;
     } else {
       previewMedia.innerHTML = `
-        <video src="${item.src}" controls autoplay playsinline></video>
+        <video src="${item.src}" controls autoplay playsinline preload="metadata" poster="${item.thumb}"></video>
       `;
     }
   } else {
@@ -434,7 +385,6 @@ function renderPreviewActions() {
   const p = currentPreview.project;
   const f = p.plans.free, pr = p.plans.premium;
 
-  // Hitung tombol WA
   previewActions.innerHTML = `
     <div class="plan-compare">
       <div class="plan-card">
@@ -464,21 +414,6 @@ function closePreview() {
 document.getElementById("closePreview").onclick = closePreview;
 previewModal.addEventListener("click", e => { if (e.target === previewModal) closePreview(); });
 
-/* ============ PRICING → WA ============ */
-document.getElementById("pricingWaFree").onclick = () => {
-  openWA("Halo Admin Appskuy 👋\n\nSaya tertarik dengan paket *Versi Gratis*.\nMohon info project yang tersedia. Terima kasih! 🙏");
-};
-document.getElementById("pricingWaPremium").onclick = () => {
-  openWA("Halo Admin Appskuy 👋\n\nSaya tertarik dengan paket *Premium*.\nMohon info lengkap & cara ordernya. Terima kasih! 🙏");
-};
-
-/* ============ WA FLOAT ============ */
-document.getElementById("waFloat").addEventListener("click", () => {
-  const wc = store.get("waClicks", 0) + 1;
-  store.set("waClicks", wc);
-  updateStatsPanel();
-});
-
 /* ============ TOAST ============ */
 let toastTimer;
 function showToast(msg) {
@@ -502,5 +437,4 @@ if (localStorage.getItem("theme") === "light") {
 }
 
 /* ============ INIT ============ */
-initVisitor();
 render();
